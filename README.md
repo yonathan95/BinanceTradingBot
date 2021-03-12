@@ -8,8 +8,8 @@ This project incorporate multiple threads, use of WebSocket and Rest APIs and ob
 It required research on cryptocurrency strategies and their employment in Java with Binance's API.
 
 ## Strategies
-The bot acquires the 500 most recent candles from Binance based on the symbol typed in by the user, and then runs on one or more from the strategies described below.
-Metholodgy - each entry strategy corresponds to its similary-named exit strategies. For example, RSI entry strategy will enter into position that listens on the four possible RSI exit strategies.
+The bot acquires the 150 most recent candles from Binance based on the symbol typed in by the user, and then runs on one or more from the strategies described below. It will try to buy in the right time as defined by the strategy and sell as well. 
+Methodolodgy - each entry strategy corresponds to its similary-named exit strategies. For example, RSI entry strategy will enter into position that listens on the four possible RSI exit strategies.
 
 ### Entry strategies
 1. [Relative Strength Index (RSI)](https://www.investopedia.com/terms/r/rsi.asp) with 9 candles.
@@ -52,8 +52,25 @@ We have 6 packages in our project:
 The Main.java files instantiate the necessary classes to boot and starts the code that's present in codeExecution.
 
 ## How to run
+1. **Connect to your Binance account:**
+In order to connect the bot to your balance in Binance, you need to change the variables API_KEY, SECRET_KEY in the Config class that's present in the data package.
+The bot will receive all of your information and will manage it and hopefully will earn you money!
+
+2. **Set up the telegram messenger:**
+In order to run the bot, the Telegram Messenger class should contain the right attributes. The Telegram Messenger will send you updates about the bot's actions, for example if the bot is entering position, you will be notified straight away in the Telegeram App.
+To do that, you need to change the TELEGRAM_API_KEY and TELEGRAM_CHAT_ID variables to your liking in the Config class that's present in the data package.
+A guide on how to get these values: https://www.siteguarding.com/en/how-to-get-telegram-bot-api-token.
+
+Variables to change for 1 and 2 in data.Config class:
+```
+public static String API_KEY = "<Your binance api key>";
+public static String SECRET_KEY = "<Your binance secret key>";
+public static String TELEGRAM_API_TOKEN= "<Your telegram bot api token>";
+public static String TELEGRAM_CHAT_ID = "<Your telegram group chat id>";
+```
+
+3. **Possible command values:**
 In order to run the bot, **you need to press "help" to view all the possible commands the bot offers.**
-### Possible command values:
 * [symbol] - binance legal symbol, for example: btcusdt
 * [interval] - the candlestick interval, possible values: 1m, 3m, 5m, 15m, 30m, 1h, 2h, 4h, 6h, 8h, 12h, 1d, 3d, 1w, 1M
 * [takeprofit] - in percentage, for example, 0.5
@@ -61,13 +78,7 @@ In order to run the bot, **you need to press "help" to view all the possible com
 * [leverage] - for example, 6.
 * [request buying amount] - in percentage, for example 10. 
 * [entry strategy] - rsi, macd long, macd short
-* [apikey]- your api key
-* [secretkey] - your secretkey.
-* 
-### Set up telegram messenger
-In order to run the bot, the telegram messenger class should contain the right attributes.
-To do that, you need to change the TELEGRAM_API_KEY and TELEGRAM_CHAT_ID to your liking in the Config class that's present in the data package.
-A guide on how to get these values: https://www.siteguarding.com/en/how-to-get-telegram-bot-api-token.
+
 
 ## Creators
 [Yonathan Wolloch](https://github.com/yonathan95)
