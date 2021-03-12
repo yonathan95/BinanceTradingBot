@@ -119,11 +119,6 @@ public class RealTimeCommandOperator {
 
         commandsAndOps.put(RealTImeOperations.GET_CURRENT_BALANCE, (message) -> System.out.println("Your current balance is: " + AccountBalance.getAccountBalance().getCoinBalance(message.getSymbol())));
 
-        commandsAndOps.put(RealTImeOperations.LOGIN, (message) -> {
-            Config.setApiKey(message.getApiKey());
-            Config.setSecretKey(message.getSecretKey());
-        });
-
         commandsAndOps.put(RealTImeOperations.BUY_NOW, (message) -> {
             SyncRequestClient syncRequestClient = RequestClient.getRequestClient().getSyncRequestClient();
             syncRequestClient.postOrder(message.getSymbol().toLowerCase(), OrderSide.BUY, null, OrderType.MARKET, null,

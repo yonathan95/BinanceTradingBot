@@ -10,6 +10,5 @@ public class RealTImeOperations {
     public static final String GET_OPEN_POSITIONS = "get open positions";
     public static final String GET_OPEN_ORDERS = "get open orders";
     public static final String GET_CURRENT_BALANCE = "get current balance";
-    public static final String LOGIN = "login";
     public static final String BUY_NOW = "buy now";
 }

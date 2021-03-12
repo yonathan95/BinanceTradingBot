@@ -81,7 +81,6 @@ public class InputMessage {
                         "get open positions\n" +
                         "get open orders, [symbol]\n" +
                         "get current balance, [symbol]\n" +
-                        "login, [apiKey], [secretKey]\n" +
                         "buy now, [symbol]\n"+
                         "\n entryStrategy options: rsi, macd" +
                         "\n interval options: 1m, 3m, 5m, 15m, 30m, 1h, 2h, 4h, 6h ,8h, 12h, 1d, 3d, 1w, 1M"
