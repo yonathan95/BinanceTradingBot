@@ -7,10 +7,10 @@ import java.math.BigDecimal;
 public class Config {
 
 	//Personal information:
-	public static String API_KEY = "h4AdqbWrKlF5wOxWmbNTKLq7IpDReZOvVXeOujGwUfU0HjXdIejUmqKvoVLbcXJ6";
-	public static String SECRET_KEY = "7qqNLwB7ZXiZu2nBJhrdv7ARVpNDhImNA1Rj1oXR6eGjZFkGsRC9ayEO7HLYVm6w";
-	public static String TELEGRAM_API_TOKEN= "1493781452:AAGDIQ2nVL4NIu2xEstyyprFY6J04kQbDsA";
-	public static String TELEGRAM_CHAT_ID = "-482820044";
+	public static String API_KEY = "<Your binance api key>";
+	public static String SECRET_KEY = "<Your binance secret key>";
+	public static String TELEGRAM_API_TOKEN= "<Your telegram bot api token>";
+	public static String TELEGRAM_CHAT_ID = "<Your telegram group chat id>";
 
 
 	public static final double DOUBLE_ZERO = 0.0;
