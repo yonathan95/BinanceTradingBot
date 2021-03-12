@@ -53,7 +53,16 @@ The Main.java files instantiate the necessary classes to boot and starts the cod
 
 ## How to run
 In order to run the bot, **you need to press "help" to view all the possible commands the bot offers.**
-### Possible command values:
+1. **Connect to your Binance account**
+In order to connect the bot to your balance in Binance, you need to change the variables API_KEY, SECRET_KEY in the Config class that's present in the data package.
+The bot will receive all of your information and will manage it and hopefully will earn you money!
+
+2. **Set up the telegram messenger**
+In order to run the bot, the Telegram Messenger class should contain the right attributes. The Telegram Messenger will send you updates about the bot's actions, for example if the bot is entering position, you will be notified straight away in the Telegeram App.
+To do that, you need to change the TELEGRAM_API_KEY and TELEGRAM_CHAT_ID variables to your liking in the Config class that's present in the data package.
+A guide on how to get these values: https://www.siteguarding.com/en/how-to-get-telegram-bot-api-token.
+
+2. **Possible command values:**
 * [symbol] - binance legal symbol, for example: btcusdt
 * [interval] - the candlestick interval, possible values: 1m, 3m, 5m, 15m, 30m, 1h, 2h, 4h, 6h, 8h, 12h, 1d, 3d, 1w, 1M
 * [takeprofit] - in percentage, for example, 0.5
@@ -61,17 +70,6 @@ In order to run the bot, **you need to press "help" to view all the possible com
 * [leverage] - for example, 6.
 * [request buying amount] - in percentage, for example 10. 
 * [entry strategy] - rsi, macd long, macd short
-
-### Connect to your Binance account
-In order to connect the bot to your balance in Binance, you need to change the variables API_KEY, SECRET_KEY in the Config class that's present in the data package.
-The bot will receive all of your information and will manage it and hopefully will earn you money!
-
-### Set up the telegram messenger
-In order to run the bot, the Telegram Messenger class should contain the right attributes. The Telegram Messenger will send you updates about the bot's actions, for example if the bot is entering position, you will be notified straight away in the Telegeram App.
-
-To do that, you need to change the TELEGRAM_API_KEY and TELEGRAM_CHAT_ID variables to your liking in the Config class that's present in the data package.
-A guide on how to get these values: https://www.siteguarding.com/en/how-to-get-telegram-bot-api-token.
-
 
 
 ## Creators
