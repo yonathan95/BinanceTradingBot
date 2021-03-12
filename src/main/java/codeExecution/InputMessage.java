@@ -65,11 +65,6 @@ public class InputMessage {
                 }
                 break;
 
-            case RealTImeOperations.LOGIN:
-                apiKey = messageParts[1];
-                secretKey = messageParts[2];
-                break;
-
             case "help":
                 System.out.println("Optional commands:\n" +
                         "cancel all orders, [symbol]\n" +
