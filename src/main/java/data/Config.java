@@ -10,6 +10,8 @@ public class Config {
 	public static final String BASE_COIN = "usdt";
 	public static String API_KEY = "h4AdqbWrKlF5wOxWmbNTKLq7IpDReZOvVXeOujGwUfU0HjXdIejUmqKvoVLbcXJ6";
 	public static String SECRET_KEY = "7qqNLwB7ZXiZu2nBJhrdv7ARVpNDhImNA1Rj1oXR6eGjZFkGsRC9ayEO7HLYVm6w";
+	public static String TELEGRAM_API_TOKEN= "1493781452:AAGDIQ2nVL4NIu2xEstyyprFY6J04kQbDsA";
+	public static String TELEGRAM_CHAT_ID = "-482820044";
 	public static final int THREAD_NUM = 6;
 	public static final String SYMBOL = "btcusdt";
 	public static final int CANDLE_NUM = 150;

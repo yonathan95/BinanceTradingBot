@@ -90,5 +90,3 @@ public class AccountBalance {
         return openPositions;
     }
 }
-
-//TODO: Think about the possibility where a new asset occurs

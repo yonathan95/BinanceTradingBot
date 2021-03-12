@@ -33,19 +33,19 @@ public class RealTimeCommandOperator {
             syncRequestClient.cancelAllOpenOrder(message.getSymbol());
         });
 
-//        commandsAndOps.put(RealTImeOperations.CLOSE_ALL_POSITIONS, (message) -> {
-//            List<Position> openPositions = AccountBalance.getAccountBalance().getOpenPositions();
-//            for (Position openPosition : openPositions) {
-//                SyncRequestClient syncRequestClient = RequestClient.getRequestClient().getSyncRequestClient();
-//                if (! openPosition.getPositionSide().equals("SHORT")) {
-//                    syncRequestClient.postOrder(openPosition.getSymbol().toLowerCase(), OrderSide.SELL, null, OrderType.MARKET, null,
-//                            openPosition.getPositionAmt().toString(), null, Config.REDUCE_ONLY, null, null, null,null,null, null, null, NewOrderRespType.RESULT);
-//                } else {
-//                    syncRequestClient.postOrder(openPosition.getSymbol().toLowerCase(), OrderSide.BUY, null, OrderType.MARKET, null,
-//                            openPosition.getPositionAmt().toString(), null, Config.REDUCE_ONLY, null, null, null,null,null, null, null, NewOrderRespType.RESULT);
-//                }
-//            }
-//        });
+        commandsAndOps.put(RealTImeOperations.CLOSE_ALL_POSITIONS, (message) -> {
+            List<Position> openPositions = AccountBalance.getAccountBalance().getOpenPositions();
+            for (Position openPosition : openPositions) {
+                SyncRequestClient syncRequestClient = RequestClient.getRequestClient().getSyncRequestClient();
+                if (! openPosition.getPositionSide().equals("SHORT")) {
+                    syncRequestClient.postOrder(openPosition.getSymbol().toLowerCase(), OrderSide.SELL, null, OrderType.MARKET, null,
+                            openPosition.getPositionAmt().toString(), null, Config.REDUCE_ONLY, null, null, null,null,null, null, null, NewOrderRespType.RESULT);
+                } else {
+                    syncRequestClient.postOrder(openPosition.getSymbol().toLowerCase(), OrderSide.BUY, null, OrderType.MARKET, null,
+                            openPosition.getPositionAmt().toString(), null, Config.REDUCE_ONLY, null, null, null,null,null, null, null, NewOrderRespType.RESULT);
+                }
+            }
+        });
 
         commandsAndOps.put(RealTImeOperations.ACTIVATE_STRATEGY, (message) -> {
             Pair<String, CandlestickInterval> pair = new MutablePair<>(message.getSymbol(), message.getInterval());
@@ -88,7 +88,7 @@ public class RealTimeCommandOperator {
             }
         });
 
-        commandsAndOps.put(RealTImeOperations.GET_LAST_TRADES, (message) -> {//TODO: complete
+        commandsAndOps.put(RealTImeOperations.GET_LAST_TRADES, (message) -> {
             SyncRequestClient syncRequestClient = RequestClient.getRequestClient().getSyncRequestClient();
             List<MyTrade> myTrades = syncRequestClient.getAccountTrades(message.getSymbol(),null,null,null, 100);
             int index = 1;
@@ -98,14 +98,14 @@ public class RealTimeCommandOperator {
             }
         });
 
-//        commandsAndOps.put(RealTImeOperations.GET_OPEN_POSITIONS, (message) -> {
-//            List<Position> openPositions = AccountBalance.getAccountBalance().getOpenPositions();
-//            int index = 1;
-//            for (Position openPosition : openPositions) {
-//                System.out.println("Open position " + index + ": " + openPosition);
-//                index++;
-//            }
-//        });
+        commandsAndOps.put(RealTImeOperations.GET_OPEN_POSITIONS, (message) -> {
+            List<Position> openPositions = AccountBalance.getAccountBalance().getOpenPositions();
+            int index = 1;
+            for (Position openPosition : openPositions) {
+                System.out.println("Open position " + index + ": " + openPosition);
+                index++;
+            }
+        });
 
         commandsAndOps.put(RealTImeOperations.GET_OPEN_ORDERS, (message) -> {
             SyncRequestClient syncRequestClient = RequestClient.getRequestClient().getSyncRequestClient();

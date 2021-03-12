@@ -1,15 +1,15 @@
 package singletonHelpers;
 
+import data.Config;
+
 import java.io.BufferedInputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
 
 public class TelegramMessenger {
-    private static String apiToken = "1493781452:AAGDIQ2nVL4NIu2xEstyyprFY6J04kQbDsA";
-    private static String chatId = "-482820044";
-
+    private static String apiToken = Config.TELEGRAM_API_TOKEN;
+    private static String chatId = Config.TELEGRAM_CHAT_ID;
 
     public static synchronized void sendToTelegram(String text) {
         String urlString = "https://api.telegram.org/bot%s/sendMessage?chat_id=%s&text=%s";
