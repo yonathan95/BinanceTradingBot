@@ -61,8 +61,6 @@ In order to run the bot, **you need to press "help" to view all the possible com
 * [leverage] - for example, 6.
 * [request buying amount] - in percentage, for example 10. 
 * [entry strategy] - rsi, macd long, macd short
-* [apikey]- your api key
-* [secretkey] - your secretkey.
 
 ### Connect to your Binance account
 In order to connect the bot to your balance in Binance, you need to change the variables API_KEY, SECRET_KEY in the Config class that's present in the data package.
