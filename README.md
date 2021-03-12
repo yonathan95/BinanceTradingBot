@@ -1,7 +1,7 @@
 # Binance Trading Bot
 
 ## Overview
-The first Machine-Dance cryptocurrency traiding bot!
+The first Machine-Dance binance cryptocurrency traiding bot!
 
 This is a bot that's written in Java that buys and sells cryptocurrency using Binance's API, managing user balances and dispalys information.
 This project incorporate multiple threads, use of WebSocket and Rest APIs and object-oriented programming.
@@ -53,7 +53,7 @@ The Main.java files instantiate the necessary classes to boot and starts the cod
 
 ## How to run
 In order to run the bot, **you need to press "help" to view all the possible commands the bot offers.**
-#### Possible values:
+### Possible command values:
 * [symbol] - binance legal symbol, for example: btcusdt
 * [interval] - the candlestick interval, possible values: 1m, 3m, 5m, 15m, 30m, 1h, 2h, 4h, 6h, 8h, 12h, 1d, 3d, 1w, 1M
 * [takeprofit] - in percentage, for example, 0.5
@@ -63,6 +63,11 @@ In order to run the bot, **you need to press "help" to view all the possible com
 * [entry strategy] - rsi, macd long, macd short
 * [apikey]- your api key
 * [secretkey] - your secretkey.
+* 
+### Set up telegram messenger
+In order to run the bot, the telegram messenger class should contain the right attributes.
+To do that, you need to change the TELEGRAM_API_KEY and TELEGRAM_CHAT_ID to your liking in the Config class that's present in the data package.
+A guide on how to get these values: https://www.siteguarding.com/en/how-to-get-telegram-bot-api-token.
 
 ## Creators
 [Yonathan Wolloch](https://github.com/yonathan95)
