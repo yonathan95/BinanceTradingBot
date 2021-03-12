@@ -19,6 +19,8 @@ Metholodgy - each entry strategy corresponds to its similary-named exit strategi
 5. [Short MACD Over RSI](https://www.investopedia.com/terms/m/macd.asp)
 * If the price is below SMA 100, we need that macd over rsi value crossed zero downwards or that we have three positive upwards pyramid.
 
+The Long MACD and Short MACD are in the same class, while the RSI is in its own class.
+
 ### Exit strategies
 1. Four possible RSI Exit strategies.
 * Cross 65 and until 73 up -> cross 60 down (selling 50% of position) -> cross 50 down (selling all position).
