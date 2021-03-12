@@ -14,10 +14,10 @@ Metholodgy - each entry strategy corresponds to its similary-named exit strategi
 ### Entry strategies
 1. [Relative Strength Index (RSI)](https://www.investopedia.com/terms/r/rsi.asp) with 9 candles.
 * To enter position the RSI needs to cross 27,30 and 35 fast (last 2 close candles).
-3. [Long MACD Over RSI](https://www.investopedia.com/terms/m/macd.asp) with 9 rsi values, fast bar: 15, slow bar: 24.
-* If the price is above SMA 150, we need or that macd over rsi value crossed zero upwards, or we have a three negative downwards pyramid.
+3. [Long MACD Over RSI](https://www.investopedia.com/terms/m/macd.asp) with 9 rsi values, fast bar: 14, slow bar: 24.
+* If the price is above SMA 100, we need or that macd over rsi value crossed zero upwards, or we have a three negative downwards pyramid.
 5. [Short MACD Over RSI](https://www.investopedia.com/terms/m/macd.asp)
-* If the price is below SMA 150, we need that macd over rsi value crossed zero downwards or that we have three positive upwards pyramid.
+* If the price is below SMA 100, we need that macd over rsi value crossed zero downwards or that we have three positive upwards pyramid.
 
 ### Exit strategies
 1. Four possible RSI Exit strategies.
@@ -26,13 +26,13 @@ Metholodgy - each entry strategy corresponds to its similary-named exit strategi
 * The RSI loses a value of at least 15 in the last 2 candles (including the open one) - selling all position
 * Crossing 30 down (selling all position), safety net.
 2. Five possible Long MACD Over RSI strategies.
-* Current price below SMA 150 -> Market
+* Current price below SMA 100 -> Market
 * Crossing the zero line downwards -> Limit
 * Not currently trailing -> If we have three positive candles downwards pyramid, activate trailing. Currently trailing -> two positive candles pyramid, deactivate trailing. Currently trailing -> If we need to sell by our trailing rules -> sell. 
 * Not currently trailing -> If we have three negative downwards pyramid, activate trailing. Not currenly trailing -> three negative candle values and the current candle is not bigger than the prev, deactivate trailing. Not Currently trailing -> If we need to sell by trailing rules -> sell.
 * Safety net.
 3. Five possible Short MACD Over RSI strategies.
-* Current price above SMA 150 -> Market
+* Current price above SMA 100 -> Market
 * Crosing the zero line upwards -> Limit
 * Not currently trailing -> If we have three negative downwards pyramid, activate trailing. Currently trailing ->  if the current candle is bigger than the previous and are both negative, deactivate trailing. Not currently trailing -> If we need to sell by our trailing rules -> sell.
 * Not currently trailing -> If we have three positive upwards pyramid, activate trailing. Currently trailing -> if the current candle is not bigger than the previous one and are positive, deactivate trailing. Not currently trailing -> If we need to sell by our own trailing rules -> sell.
