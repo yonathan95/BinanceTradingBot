@@ -16,13 +16,13 @@ public class DataHolder {
     private SMAIndicator smaIndicator;
     private int endIndex;
 
-    public DataHolder(BigDecimal currentPrice, RSIIndicator rsiIndicator, MACDIndicator macdOverRsiIndicator, double macdOverRsiCloseValue, SMAIndicator smaIndicator, int endIndex) {
+    public DataHolder(BigDecimal currentPrice, RSIIndicator rsiIndicator, MACDIndicator macdOverRsiIndicator, SMAIndicator smaIndicator, int endIndex) {
         this.currentPrice = currentPrice;
         this.rsiIndicator = rsiIndicator;
         this.macdOverRsiIndicator = macdOverRsiIndicator;
-        this.macdOverRsiCloseValue = macdOverRsiCloseValue;
         this.smaIndicator = smaIndicator;
         this.endIndex = endIndex;
+        this.macdOverRsiCloseValue = getMacdOverRsiValueAtIndex(endIndex - 1);
     }
 
     public double getMacdOverRsiSignalLineValueAtIndex(int index) {

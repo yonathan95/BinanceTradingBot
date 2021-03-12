@@ -27,7 +27,6 @@ public class RealTimeData{
     private BigDecimal currentPrice;
     private RSIIndicator rsiIndicator;
     private MACDIndicator macdOverRsiIndicator;
-    private double macdOverRsiCloseValue;
     private SMAIndicator smaIndicator;
     private int updateCounter = 0;
 
@@ -57,7 +56,7 @@ public class RealTimeData{
         if (! isNewCandle && updateCounter != 20) return null;
         updateCounter = 0;
         calculateIndicators();
-        return new DataHolder(currentPrice, rsiIndicator, macdOverRsiIndicator, macdOverRsiCloseValue, smaIndicator, realTimeData.getEndIndex());
+        return new DataHolder(currentPrice, rsiIndicator, macdOverRsiIndicator, smaIndicator, realTimeData.getEndIndex());
     }
 
     private boolean updateLastCandle(CandlestickEvent event) {
@@ -98,7 +97,6 @@ public class RealTimeData{
     private void calculateIndicators() {
         rsiIndicator = calculateRSI(RSIConstants.RSI_CANDLE_NUM);
         macdOverRsiIndicator = calculateMacdOverRsi();
-        macdOverRsiCloseValue = getMacdOverRsiValueAtIndex(MACDOverRSIConstants.LAST_CLOSE_INDEX);
         smaIndicator = new SMAIndicator(new ClosePriceIndicator(realTimeData), MACDOverRSIConstants.SMA_CANDLE_NUM);
     }
 
