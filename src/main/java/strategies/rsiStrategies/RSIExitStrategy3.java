@@ -1,8 +1,8 @@
 package strategies.rsiStrategies;
 import data.DataHolder;
-import data.RealTimeData;
 import positions.PositionHandler;
 import positions.SellingInstructions;
+import singletonHelpers.TelegramMessenger;
 import strategies.ExitStrategy;
 
 
@@ -21,12 +21,12 @@ public class RSIExitStrategy3 implements ExitStrategy {
 			updateValues(realTimeData.getRsiCloseValue());
 		}
 		if (lostValueOf15(rsiValueBefore,rsiValue)) {
-			System.out.println("Exiting with RSI exit strategy 3. Returning 100(1)");
+			TelegramMessenger.sendToTelegram("Exiting with RSI exit strategy 3. Returning 100(1)");
 			return new SellingInstructions(PositionHandler.ClosePositionTypes.SELL_LIMIT, RSIConstants.RSI_EXIT_OPTION_3_SELLING_PERCENTAGE);
 
 		}
 		if (rsiValueTwoBefore != -1.0 && lostValueOf15(rsiValueTwoBefore,rsiValue)) {
-			System.out.println("Exiting with RSI exit strategy 3. Returning 100(2)");
+			TelegramMessenger.sendToTelegram("Exiting with RSI exit strategy 3. Returning 100(2)");
 			return new SellingInstructions(PositionHandler.ClosePositionTypes.SELL_LIMIT, RSIConstants.RSI_EXIT_OPTION_3_SELLING_PERCENTAGE);
 		}
 		return null;

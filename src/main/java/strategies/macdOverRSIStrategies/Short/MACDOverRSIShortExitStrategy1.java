@@ -2,7 +2,6 @@ package strategies.macdOverRSIStrategies.Short;
 
 import data.Config;
 import data.DataHolder;
-import data.RealTimeData;
 import positions.PositionHandler;
 import positions.SellingInstructions;
 import singletonHelpers.TelegramMessenger;
@@ -10,7 +9,6 @@ import strategies.macdOverRSIStrategies.MACDOverRSIBaseExitStrategy;
 import strategies.macdOverRSIStrategies.MACDOverRSIConstants;
 
 import java.math.BigDecimal;
-import java.time.ZonedDateTime;
 import java.util.Date;
 
 public class MACDOverRSIShortExitStrategy1 extends MACDOverRSIBaseExitStrategy {

@@ -1,7 +1,6 @@
 package strategies.macdOverRSIStrategies.Short;
 
 import data.DataHolder;
-import data.RealTimeData;
 import positions.PositionHandler;
 import positions.SellingInstructions;
 import singletonHelpers.TelegramMessenger;

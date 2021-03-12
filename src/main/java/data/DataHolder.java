@@ -85,36 +85,34 @@ public class DataHolder {
     private boolean macdOverRsiCrossed(CrossType crossType, CandleType candleType, double threshold) {
         double currentMacdOverRsiValue,prevMacdOverRsiValue;
         if (candleType == CandleType.OPEN) {
-            currentMacdOverRsiValue = getMacdOverRsiValueAtIndex(getLastIndex());
+            currentMacdOverRsiValue = getMacdOverRsiValueAtIndex(endIndex);
             prevMacdOverRsiValue  = macdOverRsiCloseValue;
         } else {
             currentMacdOverRsiValue = macdOverRsiCloseValue;
-            prevMacdOverRsiValue = getMacdOverRsiValueAtIndex(getLastCloseIndex()-1);
+            prevMacdOverRsiValue = getMacdOverRsiValueAtIndex(endIndex-2);
         }
-        System.out.println("current macd: "  + currentMacdOverRsiValue);
-        System.out.println("prev macd: "  + prevMacdOverRsiValue);
         if (crossType == CrossType.UP) return currentMacdOverRsiValue > threshold && prevMacdOverRsiValue <= threshold;
         return prevMacdOverRsiValue >= threshold && currentMacdOverRsiValue < threshold;
     }
 
-    public boolean above(RealTimeData.IndicatorType indicatorType, RealTimeData.CandleType type, int threshold) {
-        if (indicatorType == RealTimeData.IndicatorType.RSI) {
-            if (type == RealTimeData.CandleType.OPEN) {
+    public boolean above(IndicatorType indicatorType, CandleType type, int threshold) {
+        if (indicatorType == IndicatorType.RSI) {
+            if (type == CandleType.OPEN) {
                 return getRsiOpenValue() > threshold;
             } else {
                 return getRsiCloseValue() > threshold;
             }
-        } else if(indicatorType == RealTimeData.IndicatorType.MACD_OVER_RSI) {
-            if (type == RealTimeData.CandleType.OPEN) {
-                return getMacdOverRsiValueAtIndex(getLastIndex()) > threshold;
+        } else if(indicatorType == IndicatorType.MACD_OVER_RSI) {
+            if (type == CandleType.OPEN) {
+                return getMacdOverRsiValueAtIndex(endIndex) > threshold;
             } else {
-                return  getMacdOverRsiValueAtIndex(getLastCloseIndex()) > threshold;
+                return  getMacdOverRsiValueAtIndex(endIndex -1) > threshold;
             }
         } else {
-            if (type == RealTimeData.CandleType.OPEN) {
-                return getSMAValueAtIndex(getLastIndex())>threshold;
+            if (type == CandleType.OPEN) {
+                return getSMAValueAtIndex(endIndex)>threshold;
             } else {
-                return getSMAValueAtIndex(getLastCloseIndex()) > threshold;
+                return getSMAValueAtIndex(endIndex-1) > threshold;
             }
         }
     }
@@ -134,6 +132,6 @@ public class DataHolder {
         UP,DOWN
     }
     public enum IndicatorType {
-        RSI,MACD_OVER_RSI, UpperBollinger, SMA
+        RSI,MACD_OVER_RSI, SMA
     }
 }

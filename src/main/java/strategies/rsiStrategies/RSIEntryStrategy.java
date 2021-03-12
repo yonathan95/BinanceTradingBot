@@ -1,6 +1,6 @@
 package strategies.rsiStrategies;
 
-import data.*;
+import data.DataHolder;
 import singletonHelpers.TelegramMessenger;
 import strategies.EntryStrategy;
 import positions.PositionHandler;
@@ -47,7 +47,7 @@ public class RSIEntryStrategy implements EntryStrategy {
             if(rsiValueToCheckForPosition3 != realTimeData.getRsiCloseValue()) {
                 time_passed_from_position_2 ++;
             }
-            if (realTimeData.above(RealTimeData.IndicatorType.RSI,RealTimeData.CandleType.CLOSE, RSIConstants.RSI_ENTRY_THRESHOLD_3)) { //TODO:fix
+            if (realTimeData.above(DataHolder.IndicatorType.RSI, DataHolder.CandleType.CLOSE, RSIConstants.RSI_ENTRY_THRESHOLD_3)) { //TODO:fix
                 time_passed_from_position_2 = 0;
                 positionInStrategy = PositionInStrategy.POSITION_ONE;
                 rsiValueToCheckForPosition3 = -1;
