@@ -52,7 +52,6 @@ We have 6 packages in our project:
 The Main.java files instantiate the necessary classes to boot and starts the code that's present in codeExecution.
 
 ## How to run
-In order to run the bot, **you need to press "help" to view all the possible commands the bot offers.**
 1. **Connect to your Binance account:**
 In order to connect the bot to your balance in Binance, you need to change the variables API_KEY, SECRET_KEY in the Config class that's present in the data package.
 The bot will receive all of your information and will manage it and hopefully will earn you money!
@@ -63,6 +62,7 @@ To do that, you need to change the TELEGRAM_API_KEY and TELEGRAM_CHAT_ID variabl
 A guide on how to get these values: https://www.siteguarding.com/en/how-to-get-telegram-bot-api-token.
 
 2. **Possible command values:**
+In order to run the bot, **you need to press "help" to view all the possible commands the bot offers.**
 * [symbol] - binance legal symbol, for example: btcusdt
 * [interval] - the candlestick interval, possible values: 1m, 3m, 5m, 15m, 30m, 1h, 2h, 4h, 6h, 8h, 12h, 1d, 3d, 1w, 1M
 * [takeprofit] - in percentage, for example, 0.5
