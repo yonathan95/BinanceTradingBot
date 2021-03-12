@@ -15,7 +15,6 @@ public class Config {
 
 	public static final double DOUBLE_ZERO = 0.0;
 	public static final int THREAD_NUM = 6;
-	public static final String SYMBOL = "btcusdt";
 	public static final int CANDLE_NUM = 150;
 	public static final String NEW = "NEW";
 	public static final String PARTIALLY_FILLED = "PARTIALLY_FILLED";

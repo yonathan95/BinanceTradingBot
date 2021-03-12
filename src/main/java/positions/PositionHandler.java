@@ -111,7 +111,7 @@ public class PositionHandler implements Serializable {
         if ( ! terminated){
             terminated = true;
             SyncRequestClient syncRequestClient = RequestClient.getRequestClient().getSyncRequestClient();
-            syncRequestClient.cancelAllOpenOrder(Config.SYMBOL);
+            syncRequestClient.cancelAllOpenOrder(symbol);
             TelegramMessenger.sendToTelegram("Position closed!, balance:  " + AccountBalance.getAccountBalance().getCoinBalance("usdt") +", " + new Date(System.currentTimeMillis()));
         }
     }
