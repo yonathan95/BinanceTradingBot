@@ -61,7 +61,15 @@ In order to run the bot, the Telegram Messenger class should contain the right a
 To do that, you need to change the TELEGRAM_API_KEY and TELEGRAM_CHAT_ID variables to your liking in the Config class that's present in the data package.
 A guide on how to get these values: https://www.siteguarding.com/en/how-to-get-telegram-bot-api-token.
 
-2. **Possible command values:**
+Variables to change for 1 and 2 in data.Config class:
+```
+public static String API_KEY = "<Your binance api key>";
+public static String SECRET_KEY = "<Your binance secret key>";
+public static String TELEGRAM_API_TOKEN= "<Your telegram bot api token>";
+public static String TELEGRAM_CHAT_ID = "<Your telegram group chat id>";
+```
+
+3. **Possible command values:**
 In order to run the bot, **you need to press "help" to view all the possible commands the bot offers.**
 * [symbol] - binance legal symbol, for example: btcusdt
 * [interval] - the candlestick interval, possible values: 1m, 3m, 5m, 15m, 30m, 1h, 2h, 4h, 6h, 8h, 12h, 1d, 3d, 1w, 1M
