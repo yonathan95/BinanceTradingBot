@@ -47,7 +47,7 @@ public class RSIEntryStrategy implements EntryStrategy {
             if(rsiValueToCheckForPosition3 != realTimeData.getRsiCloseValue()) {
                 time_passed_from_position_2 ++;
             }
-            if (realTimeData.above(DataHolder.IndicatorType.RSI, DataHolder.CandleType.CLOSE, RSIConstants.RSI_ENTRY_THRESHOLD_3)) { //TODO:fix
+            if (realTimeData.above(DataHolder.IndicatorType.RSI, DataHolder.CandleType.CLOSE, RSIConstants.RSI_ENTRY_THRESHOLD_3)) {
                 time_passed_from_position_2 = 0;
                 positionInStrategy = PositionInStrategy.POSITION_ONE;
                 rsiValueToCheckForPosition3 = -1;
@@ -57,7 +57,7 @@ public class RSIEntryStrategy implements EntryStrategy {
                 try{
                     TelegramMessenger.sendToTelegram("buying long: " + new Date(System.currentTimeMillis()));
                     Order buyOrder = syncRequestClient.postOrder(symbol, OrderSide.BUY, null, OrderType.MARKET, null,
-                            buyingQty,null,null,null, null,null,null, null, WorkingType.MARK_PRICE, null, NewOrderRespType.RESULT);//TODO: check if buying with market price is ok.
+                            buyingQty,null,null,null, null,null,null, null, WorkingType.MARK_PRICE, null, NewOrderRespType.RESULT);
                     String takeProfitPrice = Utils.getTakeProfitPriceAsString(realTimeData, symbol,takeProfitPercentage);
                     syncRequestClient.postOrder(symbol, OrderSide.SELL, null,OrderType.TAKE_PROFIT, TimeInForce.GTC,
                             buyingQty,takeProfitPrice,null,null,takeProfitPrice,null,null, null,WorkingType.MARK_PRICE, null, NewOrderRespType.RESULT);

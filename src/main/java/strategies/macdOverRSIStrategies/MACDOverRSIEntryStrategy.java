@@ -77,7 +77,7 @@ public class MACDOverRSIEntryStrategy implements EntryStrategy {
         return null;
     }
 
-    private PositionHandler buyAndCreatePositionHandler(BigDecimal currentPrice, String symbol, PositionSide positionSide) {//TODO: maybe change market later.
+    private PositionHandler buyAndCreatePositionHandler(BigDecimal currentPrice, String symbol, PositionSide positionSide) {
         bought = true;
         if (positionSide == PositionSide.LONG) {
             TelegramMessenger.sendToTelegram("buying long: " + new Date(System.currentTimeMillis()));

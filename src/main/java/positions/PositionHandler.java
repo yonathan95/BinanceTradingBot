@@ -38,7 +38,7 @@ public class PositionHandler implements Serializable {
     public synchronized boolean isSoldOut(){
         return isActive && isSelling && (!status.equals(Config.NEW)) && (!rebuying) && ((qty.compareTo(BigDecimal.valueOf(0.0)) == 0));}
 
-    public synchronized void run(DataHolder realTimeData) {//TODO: adjust to long and short and trailing as exit method
+    public synchronized void run(DataHolder realTimeData) {
         isSelling = false;
         for (ExitStrategy exitStrategy : exitStrategies) {
             SellingInstructions sellingInstructions = exitStrategy.run(realTimeData);
