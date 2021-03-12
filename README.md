@@ -1,22 +1,22 @@
-# Cryptocurrency Trading Bot
+# Binance Trading Bot
 
 ## Overview
 The first Machine-Dance cryptocurrency traiding bot!
 
 This is a bot that's written in Java that buys and sells cryptocurrency using Binance's API, managing user balances and dispalys information.
 This project incorporate multiple threads, use of WebSocket and Rest APIs and object-oriented programming.
-It required research on crypto currency strategies and their employment in Java with Binance's API.
+It required research on cryptocurrency strategies and their employment in Java with Binance's API.
 
 ## Strategies
-The bot acquires the 500 most recent candles from Binance based on the symbol typed in by the user, and then runs on one or more from the following strategies.
-Metholodgy - each entry strategy corresponds to its similary-named exit strategies. For example, RSI entry strategy will enter into position that listens on the four possible RSI exit strategies. 
+The bot acquires the 500 most recent candles from Binance based on the symbol typed in by the user, and then runs on one or more from the strategies described below.
+Metholodgy - each entry strategy corresponds to its similary-named exit strategies. For example, RSI entry strategy will enter into position that listens on the four possible RSI exit strategies.
 
 ### Entry strategies
 1. [Relative Strength Index (RSI)](https://www.investopedia.com/terms/r/rsi.asp) with 9 candles.
 * To enter position the RSI needs to cross 27,30 and 35 fast (last 2 close candles).
-3. [Long MACD Over RSI](https://www.investopedia.com/terms/m/macd.asp) with 9 rsi values, fast bar: 14, slow bar: 24.
+2. [Long MACD Over RSI](https://www.investopedia.com/terms/m/macd.asp) with 9 rsi values, fast bar: 14, slow bar: 24.
 * If the price is above SMA 100, we need or that macd over rsi value crossed zero upwards, or we have a three negative downwards pyramid.
-5. [Short MACD Over RSI](https://www.investopedia.com/terms/m/macd.asp)
+3. [Short MACD Over RSI](https://www.investopedia.com/terms/m/macd.asp)
 * If the price is below SMA 100, we need that macd over rsi value crossed zero downwards or that we have three positive upwards pyramid.
 
 The Long MACD and Short MACD are in the same class, while the RSI is in its own class.
