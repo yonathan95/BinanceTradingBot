@@ -41,7 +41,7 @@ Metholodgy - each entry strategy corresponds to its similary-named exit strategi
 ## Project structure
 We have 6 packages in our project:
 1. codeExecution - The code runner. Expects user input, creates the investment manager. Basically starts the bot.
-2. data - Holds the real time data, which is the main object that holds the candles, calculate indicators more. the package also has account balance which manages the account.
+2. data - Holds the real time data, which is the main object that holds the candles, calculate indicators more. the package also has account balance which manages the account. The DataHolder class holds the box of information that's needed for each strategy, used for thread-safe implementaion.
 3. positions - Holds the position handler - which handles the current position and listen on the exit strategies. Selling instructions is the class that has the information we need for selling.
 4. singleton Helpers - Helper package that contains singleton classes that we use in our project.
 5. strategies - holds the main logic of the bot. Has the entry and exit strategies of rsi, long macd, short macd and useful constants.
