@@ -9,7 +9,7 @@ It required research on cryptocurrency strategies and their employment in Java w
 
 ## Strategies
 The bot acquires the 150 most recent candles from Binance based on the symbol typed in by the user, and then runs on one or more from the strategies described below. It will try to buy in the right time as defined by the strategy and sell as well. 
-Metholodgy - each entry strategy corresponds to its similary-named exit strategies. For example, RSI entry strategy will enter into position that listens on the four possible RSI exit strategies.
+Methodolodgy - each entry strategy corresponds to its similary-named exit strategies. For example, RSI entry strategy will enter into position that listens on the four possible RSI exit strategies.
 
 ### Entry strategies
 1. [Relative Strength Index (RSI)](https://www.investopedia.com/terms/r/rsi.asp) with 9 candles.
