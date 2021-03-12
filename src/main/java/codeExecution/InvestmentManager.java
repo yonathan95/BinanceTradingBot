@@ -34,7 +34,7 @@ public class InvestmentManager implements Runnable{
         RealTimeData realTimeData = new RealTimeData(symbol, interval);
         SubscriptionClient subscriptionClient = SubClient.getSubClient().getSubscriptionClient();
         ExecutorService iterationExecutorService = ExecService.getExecService().getExecutorService();
-        TelegramMessenger.sendToTelegram(symbol + "balance:  " + AccountBalance.getAccountBalance().getCoinBalance(symbol) +", " + new Date(System.currentTimeMillis()));
+        TelegramMessenger.sendToTelegram(symbol + " balance:  " + AccountBalance.getAccountBalance().getCoinBalance("usdt") +", " + new Date(System.currentTimeMillis()));
 
         subscriptionClient.subscribeCandlestickEvent(symbol, interval, ((event) -> iterationExecutorService.execute(()->{
             DataHolder dataHolder = realTimeData.updateData(event);
