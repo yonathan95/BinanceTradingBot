@@ -35,7 +35,7 @@ The Long MACD and Short MACD are in the same class, while the RSI is in its own 
 * Safety net.
 3. Five possible Short MACD Over RSI strategies.
 * Current price above SMA 100 -> Market
-* Crosing the zero line upwards -> Limit
+* Crossing the zero line upwards -> Limit
 * Not currently trailing -> If we have three negative downwards pyramid, activate trailing. Currently trailing ->  if the current candle is bigger than the previous and are both negative, deactivate trailing. Not currently trailing -> If we need to sell by our trailing rules -> sell.
 * Not currently trailing -> If we have three positive upwards pyramid, activate trailing. Currently trailing -> if the current candle is not bigger than the previous one and are positive, deactivate trailing. Not currently trailing -> If we need to sell by our own trailing rules -> sell.
 * Saftety net.
