@@ -77,7 +77,7 @@ In order to run the bot, **you need to press "help" to view all the possible com
 * [stoploss] - in percentage, for example, 0.01.
 * [leverage] - for example, 6.
 * [request buying amount] - in percentage, for example 10. 
-* [entry strategy] - rsi, macd long, macd short
+* [entry strategy] - rsi, macd
 
 
 ## Creators
