@@ -21,7 +21,7 @@ public class MACDOverRSILongExitStrategy5 extends MACDOverRSIBaseExitStrategy {
     }
     @Override
     public SellingInstructions run(DataHolder realTimeData) {
-        BigDecimal currentPrice = realTimeData.getCurrentPrice();
+        double currentPrice = realTimeData.getCurrentPrice();
         if (! isTrailing){
             trailer.setAbsoluteMaxPrice(currentPrice);
             isTrailing = true;

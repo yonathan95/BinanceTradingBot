@@ -1,5 +1,6 @@
 package codeExecution;
 
+import singletonHelpers.BinanceInfo;
 import strategies.EntryStrategy;
 import strategies.macdOverRSIStrategies.MACDOverRSIEntryStrategy;
 import strategies.rsiStrategies.RSIEntryStrategy;
@@ -8,7 +9,7 @@ import com.binance.client.model.enums.CandlestickInterval;
 import java.math.BigDecimal;
 
 public class InputMessage {
-    public String operation = "";
+    public String operation = RealTImeOperations.UNKNOWN_OPERATION;
     private String symbol;
     private CandlestickInterval interval;
     private EntryStrategy entryStrategy;
@@ -16,12 +17,10 @@ public class InputMessage {
     private String secretKey;
 
     public void initialize(String input) {
-        String [] messageParts = input.split(", ");
+        String [] messageParts = input.split(" ");
         operation = messageParts[0];
         switch (operation) {
             case RealTImeOperations.CANCEL_ALL_ORDERS:
-
-            case RealTImeOperations.BUY_NOW:
 
             case RealTImeOperations.GET_LAST_TRADES:
 
@@ -29,61 +28,64 @@ public class InputMessage {
 
             case RealTImeOperations.GET_CURRENT_BALANCE:
                 symbol = messageParts[1];
+                if (BinanceInfo.isSymbolExists(symbol)){
+                    System.out.println("Wrong symbol");
+                    operation = RealTImeOperations.UNKNOWN_OPERATION;
+                }
                 break;
 
             case RealTImeOperations.CLOSE_ALL_POSITIONS:
+
+            case RealTImeOperations.CLOSE_PROGRAM:
 
             case RealTImeOperations.GET_OPEN_POSITIONS:
                 break;
 
             case RealTImeOperations.ACTIVATE_STRATEGY:
-            symbol = messageParts[1];
-            for (CandlestickInterval candlestickInterval: CandlestickInterval.values()){
-                if (candlestickInterval.toString().equals(messageParts[2])) interval = candlestickInterval;
-            }
-            entryStrategy = stringToEntryStrategy(messageParts[3]);
-            if (entryStrategy != null){
-                entryStrategy.setTakeProfitPercentage(Double.parseDouble(messageParts[4]));
-                entryStrategy.setStopLossPercentage(Double.parseDouble(messageParts[5]));
-                entryStrategy.setLeverage(Integer.parseInt(messageParts[6]));
-                entryStrategy.setRequestedBuyingAmount(BigDecimal.valueOf(Double.parseDouble(messageParts[7])));
-            }
-                break;
-
-            case RealTImeOperations.ACTIVATE_STRATEGY_D:
-            symbol = messageParts[1];
-            for (CandlestickInterval candlestickInterval: CandlestickInterval.values()){
-                if (candlestickInterval.toString().equals(messageParts[2])) interval = candlestickInterval;
-            }
-            entryStrategy = stringToEntryStrategy(messageParts[3]);
-                break;
 
             case RealTImeOperations.DEACTIVATE_STRATEGY:
-                symbol = messageParts[1];
+                entryStrategy = stringToEntryStrategy(messageParts[1]);
+                symbol = messageParts[2];
+                interval = null;
                 for (CandlestickInterval candlestickInterval: CandlestickInterval.values()){
-                    if (candlestickInterval.toString().equals(messageParts[2])) interval = candlestickInterval;
+                    if (candlestickInterval.toString().equals(messageParts[3])) interval = candlestickInterval;
+                }
+                if (entryStrategy == null){
+                    System.out.println("This strategy don't exists");
+                    operation = RealTImeOperations.UNKNOWN_OPERATION;
+                    break;
+                }
+                if (BinanceInfo.isSymbolExists(symbol)){
+                    System.out.println("Wrong symbol");
+                    operation = RealTImeOperations.UNKNOWN_OPERATION;
+                    break;
+                }
+                if (interval == null){
+                    System.out.println("Wrong interval");
+                    operation = RealTImeOperations.UNKNOWN_OPERATION;
+                    break;
                 }
                 break;
 
             case "help":
                 System.out.println("Optional commands:\n" +
-                        "cancel all orders, [symbol]\n" +
-                        "close all positions\n" +
-                        "activate strategy, [symbol], [interval], [entryStrategy], [takeProfit], [stopLoss], [leverage], [request buying amount]\n" +
-                        "activate strategy default, [symbol], [interval], [entryStrategy]\n" +
-                        "deactivate strategy, [symbol], [interval]\n" +
-                        "get last trades, [symbol]\n" +
-                        "get open positions\n" +
-                        "get open orders, [symbol]\n" +
-                        "get current balance, [symbol]\n" +
-                        "buy now, [symbol]\n"+
+                        "cao [symbol] - Cancel all orders, for [symbol]\n" +
+                        "cap - Close all open positions\n" +
+                        "as [strategy] [symbol] [interval] - Activate strategy [strategy] with [symbol] and candlestick interval[interval]\n" +
+                        "ds  [strategy] [symbol] [interval] - Deactivate strategy with [symbol] and candlestick interval [interval]\n" +
+                        "glt [symbol] - Get last trades for [symbol]\n" +
+                        "gop - get all Open positions\n" +
+                        "goo [symbol] - Get all open orders for [symbol]\n" +
+                        "gcb [symbol] - Get current balance for [symbol]\n" +
+                        "cp - Close program\n" +
                         "\n entryStrategy options: rsi, macd" +
                         "\n interval options: 1m, 3m, 5m, 15m, 30m, 1h, 2h, 4h, 6h ,8h, 12h, 1d, 3d, 1w, 1M"
                 );
                 break;
 
             default:
-                System.out.println("Wrong message");
+                System.out.println("Wrong operation");
+                operation = RealTImeOperations.UNKNOWN_OPERATION;
         }
     }
 

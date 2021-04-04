@@ -18,7 +18,7 @@ import java.util.Date;
 public class PositionHandler implements Serializable {
     private String clientOrderId;
     private Long orderID;
-    private BigDecimal qty = BigDecimal.valueOf(0.0);
+    private double qty = 0;
     private final String symbol;
     private volatile boolean isActive = false;
     private String status = Config.NEW;
@@ -36,7 +36,7 @@ public class PositionHandler implements Serializable {
     }
 
     public synchronized boolean isSoldOut(){
-        return isActive && isSelling && (!status.equals(Config.NEW)) && (!rebuying) && ((qty.compareTo(BigDecimal.valueOf(0.0)) == 0));}
+        return isActive && isSelling && (!status.equals(Config.NEW)) && (!rebuying) && ((qty == 0));}
 
     public synchronized void run(DataHolder realTimeData) {
         isSelling = false;
@@ -56,7 +56,7 @@ public class PositionHandler implements Serializable {
         Order order = syncRequestClient.getOrder(symbol, orderID, clientOrderId);
         status = order.getStatus();
         isActive(realTimeData, order,interval);
-        qty = AccountBalance.getAccountBalance().getPosition(symbol).getPositionAmt();;
+        qty = AccountBalance.getAccountBalance().getPosition(symbol).getPositionAmt().doubleValue();
     }
 
     private void isActive(DataHolder realTimeData, Order order,CandlestickInterval interval) {
@@ -103,8 +103,8 @@ public class PositionHandler implements Serializable {
         return null;
     }
 
-    private BigDecimal percentageOfQuantity(BigDecimal percentage) {
-        return qty.multiply(percentage);
+    private double percentageOfQuantity(double percentage) {
+        return qty* percentage;
     }
 
     public void terminate(){
@@ -128,7 +128,7 @@ public class PositionHandler implements Serializable {
                 try {
                     syncRequestClient.postOrder(symbol, OrderSide.SELL, PositionSide.BOTH, OrderType.LIMIT, TimeInForce.GTC,
                             sellingQty, realTimeData.getCurrentPrice().toString(), Config.REDUCE_ONLY, null, null,null,null, null, null, WorkingType.MARK_PRICE.toString(), NewOrderRespType.RESULT);
-                    TelegramMessenger.sendToTelegram("Selling price:  " + realTimeData.getCurrentPrice().toString() +" ," + new Date(System.currentTimeMillis()));
+                    TelegramMessenger.sendToTelegram("Selling price:  " + realTimeData.getCurrentPrice() +" ," + new Date(System.currentTimeMillis()));
                 } catch (Exception ignored) {}
                 break;
 
@@ -136,7 +136,7 @@ public class PositionHandler implements Serializable {
                 try {
                     syncRequestClient.postOrder(symbol, OrderSide.SELL, PositionSide.BOTH, OrderType.MARKET, null,
                             sellingQty, null, Config.REDUCE_ONLY, null, null, null,null,null, null, null, NewOrderRespType.RESULT);
-                    TelegramMessenger.sendToTelegram("Selling price:  " + realTimeData.getCurrentPrice().toString() +" ," + new Date(System.currentTimeMillis()));
+                    TelegramMessenger.sendToTelegram("Selling price:  " + realTimeData.getCurrentPrice() +" ," + new Date(System.currentTimeMillis()));
                 } catch (Exception ignored) {}
                 break;
 

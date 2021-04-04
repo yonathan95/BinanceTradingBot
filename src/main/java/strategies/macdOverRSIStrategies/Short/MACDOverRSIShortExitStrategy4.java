@@ -23,7 +23,7 @@ public class MACDOverRSIShortExitStrategy4 extends MACDOverRSIBaseExitStrategy {
 	@Override
 	public SellingInstructions run(DataHolder realTimeData) {
 		if (isTrailing) {
-			BigDecimal currentPrice = realTimeData.getCurrentPrice();
+			double currentPrice = realTimeData.getCurrentPrice();
 			trailer.updateTrailer(currentPrice);
 			if (changedDirectionAndPositiveThreeHistogram(realTimeData)) {
 				isTrailing = false;

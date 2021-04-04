@@ -9,14 +9,14 @@ import strategies.macdOverRSIStrategies.MACDOverRSIConstants;
 import java.math.BigDecimal;
 
 public class DataHolder {
-    private BigDecimal currentPrice;
-    private RSIIndicator rsiIndicator;
-    private MACDIndicator macdOverRsiIndicator;
-    private double macdOverRsiCloseValue;
-    private SMAIndicator smaIndicator;
-    private int endIndex;
+    private final Double currentPrice;
+    private final RSIIndicator rsiIndicator;
+    private final MACDIndicator macdOverRsiIndicator;
+    private final double macdOverRsiCloseValue;
+    private final SMAIndicator smaIndicator;
+    private final int endIndex;
 
-    public DataHolder(BigDecimal currentPrice, RSIIndicator rsiIndicator, MACDIndicator macdOverRsiIndicator, SMAIndicator smaIndicator, int endIndex) {
+    public DataHolder(double currentPrice, RSIIndicator rsiIndicator, MACDIndicator macdOverRsiIndicator, SMAIndicator smaIndicator, int endIndex) {
         this.currentPrice = currentPrice;
         this.rsiIndicator = rsiIndicator;
         this.macdOverRsiIndicator = macdOverRsiIndicator;
@@ -117,7 +117,7 @@ public class DataHolder {
         }
     }
 
-    public synchronized BigDecimal getCurrentPrice() { return currentPrice;}
+    public synchronized Double getCurrentPrice() { return currentPrice;}
 
     public int getLastIndex(){return endIndex;}
 

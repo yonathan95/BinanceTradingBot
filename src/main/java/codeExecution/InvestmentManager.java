@@ -67,4 +67,5 @@ public class InvestmentManager implements Runnable{
     public void removeEntryStrategy(EntryStrategy entryStrategy) {
         entryStrategies.remove(entryStrategy);
     }
+
 }

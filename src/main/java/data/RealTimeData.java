@@ -24,7 +24,7 @@ public class RealTimeData{
 
     private Long lastCandleOpenTime;
     private BaseBarSeries realTimeData;
-    private BigDecimal currentPrice;
+    private double currentPrice;
     private RSIIndicator rsiIndicator;
     private MACDIndicator macdOverRsiIndicator;
     private SMAIndicator smaIndicator;
@@ -36,7 +36,7 @@ public class RealTimeData{
         SyncRequestClient syncRequestClient = RequestClient.getRequestClient().getSyncRequestClient();
         List<Candlestick> candlestickBars = syncRequestClient.getCandlestick(symbol, interval, null, null, Config.CANDLE_NUM);
         lastCandleOpenTime = candlestickBars.get(candlestickBars.size() - 1).getOpenTime();
-        currentPrice = candlestickBars.get(candlestickBars.size() -1).getClose();
+        currentPrice = candlestickBars.get(candlestickBars.size() -1).getClose().doubleValue();
         fillRealTimeData(candlestickBars);
         calculateIndicators();
     }
@@ -60,7 +60,7 @@ public class RealTimeData{
     }
 
     private boolean updateLastCandle(CandlestickEvent event) {
-        currentPrice = event.getClose();
+        currentPrice = event.getClose().doubleValue();
         boolean isNewCandle = !(event.getStartTime().doubleValue() == lastCandleOpenTime);
         ZonedDateTime closeTime = utils.Utils.getZonedDateTime(event.getCloseTime());
         Duration candleDuration = Duration.ofMillis(event.getCloseTime() - event.getStartTime());
@@ -123,7 +123,7 @@ public class RealTimeData{
         return new RSIIndicator(closePriceIndicator, candleNum);
     }
 
-    public BigDecimal getCurrentPrice() {
+    public double getCurrentPrice() {
         return currentPrice;
     }
 

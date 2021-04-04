@@ -35,18 +35,18 @@ public class Utils {
 				ZoneId.systemDefault());
 	}
 
-	public static String getBuyingQtyAsString(BigDecimal currentPrice , String symbol, int leverage, BigDecimal requestedBuyingAmount) {
-		BigDecimal buyingQty = requestedBuyingAmount.multiply(BigDecimal.valueOf(leverage)).divide(currentPrice, MathContext.DECIMAL32);
+	public static String getBuyingQtyAsString(double currentPrice , String symbol, int leverage, double requestedBuyingAmount) {
+		double buyingQty = requestedBuyingAmount * leverage / currentPrice;
 		return fixQuantity(BinanceInfo.formatQty(buyingQty, symbol));
 	}
 
 	public static String getTakeProfitPriceAsString(DataHolder realTimeData, String symbol, double takeProfitPercentage) {
-		BigDecimal takeProfitPrice = realTimeData.getCurrentPrice().add((realTimeData.getCurrentPrice().multiply(BigDecimal.valueOf(takeProfitPercentage))));
+		double takeProfitPrice = realTimeData.getCurrentPrice() + realTimeData.getCurrentPrice() * takeProfitPercentage;
 		return BinanceInfo.formatPrice(takeProfitPrice, symbol);
 	}
 
 	public static String getStopLossPriceAsString(DataHolder realTimeData, String symbol, double stopLossPercentage) {
-		BigDecimal stopLossPrice = realTimeData.getCurrentPrice().subtract(realTimeData.getCurrentPrice().multiply(BigDecimal.valueOf(stopLossPercentage)));
+		double stopLossPrice = realTimeData.getCurrentPrice() - realTimeData.getCurrentPrice() * stopLossPercentage;
 		return BinanceInfo.formatPrice(stopLossPrice, symbol);
 	}
 

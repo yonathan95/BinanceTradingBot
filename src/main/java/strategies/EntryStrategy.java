@@ -15,5 +15,5 @@ public interface EntryStrategy{
     void setTakeProfitPercentage(double takeProfitPercentage);
     void setStopLossPercentage(double stopLossPercentage);
     void setLeverage(int leverage);
-    void setRequestedBuyingAmount(BigDecimal requestedBuyingAmount);
+    void setRequestedBuyingAmount(double requestedBuyingAmount);
 }

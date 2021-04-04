@@ -4,9 +4,9 @@ import java.math.BigDecimal;
 
 public class SellingInstructions {
     private PositionHandler.ClosePositionTypes type;
-    private BigDecimal sellingQtyPercentage;
+    private double sellingQtyPercentage;
 
-    public SellingInstructions(PositionHandler.ClosePositionTypes type, BigDecimal sellingQtyPercentage) {
+    public SellingInstructions(PositionHandler.ClosePositionTypes type, double sellingQtyPercentage) {
         this.type = type;
         this.sellingQtyPercentage = sellingQtyPercentage;
     }
@@ -19,11 +19,11 @@ public class SellingInstructions {
         this.type = type;
     }
 
-    public BigDecimal getSellingQtyPercentage() {
+    public double getSellingQtyPercentage() {
         return sellingQtyPercentage;
     }
 
-    public void setSellingQtyPercentage(BigDecimal sellingQtyPercentage) {
+    public void setSellingQtyPercentage(double sellingQtyPercentage) {
         this.sellingQtyPercentage = sellingQtyPercentage;
     }
 }

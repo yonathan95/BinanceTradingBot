@@ -6,15 +6,15 @@ import java.math.BigDecimal;
 
 public class Trailer {
 
-    private BigDecimal absoluteMaxPrice;
+    private double absoluteMaxPrice;
 
-    private BigDecimal exitPrice;
+    private double exitPrice;
 
     private PositionSide side;
 
     Double trailingPercentage;
 
-    public Trailer(BigDecimal currentPrice, Double trailingPercentage, PositionSide side){
+    public Trailer(double currentPrice, Double trailingPercentage, PositionSide side){
         absoluteMaxPrice = currentPrice;
         this.side = side;
         this.trailingPercentage = trailingPercentage;
@@ -26,47 +26,47 @@ public class Trailer {
         }
     }
 
-    public void updateTrailer(BigDecimal currentPrice){
+    public void updateTrailer(double currentPrice){
         if(side == PositionSide.LONG) {
-            if (currentPrice.compareTo(absoluteMaxPrice) > 0) {
+            if (currentPrice > absoluteMaxPrice) {
                 absoluteMaxPrice = currentPrice;
                 exitPrice = calculateLongTrailingExitPrices(absoluteMaxPrice, trailingPercentage);
             }
         }
         else{
-            if (currentPrice.compareTo(absoluteMaxPrice) < 0 ) {
+            if (currentPrice < absoluteMaxPrice) {
                 absoluteMaxPrice = currentPrice;
                 exitPrice = calculateShortTrailingExitPrices(absoluteMaxPrice, trailingPercentage);
             }
         }
     }
 
-    public boolean needToSell(BigDecimal currentPrice){
-        if (side == PositionSide.LONG) return currentPrice.compareTo(exitPrice) <= 0;
-        else return currentPrice.compareTo(exitPrice) >= 0;
+    public boolean needToSell(double currentPrice){
+        if (side == PositionSide.LONG) return currentPrice <= exitPrice;
+        else return currentPrice >= exitPrice;
     }
 
-    private BigDecimal calculateShortTrailingExitPrices(BigDecimal highestPrice, Double trailingPercentage) {
-        return highestPrice.add((highestPrice.multiply(BigDecimal.valueOf(trailingPercentage)).multiply(BigDecimal.valueOf(1.0/100))));
+    private double calculateShortTrailingExitPrices(double highestPrice, Double trailingPercentage) {
+        return highestPrice + (highestPrice * trailingPercentage / 100);
     }
 
-    private BigDecimal calculateLongTrailingExitPrices(BigDecimal highestPrice, Double trailingPercentage) {
-            return highestPrice.subtract((highestPrice.multiply(BigDecimal.valueOf(trailingPercentage)).multiply(BigDecimal.valueOf(1.0/100))));
+    private double calculateLongTrailingExitPrices(double highestPrice, Double trailingPercentage) {
+            return highestPrice - (highestPrice * trailingPercentage / 100);
     }
 
-    public BigDecimal getAbsoluteMaxPrice() {
+    public double getAbsoluteMaxPrice() {
         return absoluteMaxPrice;
     }
 
-    public void setAbsoluteMaxPrice(BigDecimal absoluteMaxPrice) {
+    public void setAbsoluteMaxPrice(double absoluteMaxPrice) {
         this.absoluteMaxPrice = absoluteMaxPrice;
     }
 
-    public BigDecimal getExitPrice() {
+    public double getExitPrice() {
         return exitPrice;
     }
 
-    public void setExitPrice(BigDecimal exitPrice) {
+    public void setExitPrice(double exitPrice) {
         this.exitPrice = exitPrice;
     }
 

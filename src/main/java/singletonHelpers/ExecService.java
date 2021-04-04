@@ -4,6 +4,7 @@ import data.Config;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 public class ExecService {
     private ExecutorService executorService;
@@ -14,6 +15,7 @@ public class ExecService {
     private ExecService() {
         executorService = Executors.newFixedThreadPool(Config.THREAD_NUM);
     }
+    
     public ExecutorService getExecutorService() {
         return executorService;
     }
@@ -21,4 +23,5 @@ public class ExecService {
     public static ExecService getExecService() {
         return ExecServiceHolder.execService;
     }
+
 }
