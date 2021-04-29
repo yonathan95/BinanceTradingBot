@@ -28,7 +28,7 @@ public class InputMessage {
 
             case RealTImeOperations.GET_CURRENT_BALANCE:
                 symbol = messageParts[1];
-                if (BinanceInfo.isSymbolExists(symbol)){
+                if (!BinanceInfo.isSymbolExists(symbol)){
                     System.out.println("Wrong symbol");
                     operation = RealTImeOperations.UNKNOWN_OPERATION;
                 }
@@ -55,7 +55,7 @@ public class InputMessage {
                     operation = RealTImeOperations.UNKNOWN_OPERATION;
                     break;
                 }
-                if (BinanceInfo.isSymbolExists(symbol)){
+                if (!BinanceInfo.isSymbolExists(symbol)){
                     System.out.println("Wrong symbol");
                     operation = RealTImeOperations.UNKNOWN_OPERATION;
                     break;
