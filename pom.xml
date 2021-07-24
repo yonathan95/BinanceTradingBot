@@ -58,7 +58,7 @@
         <dependency>
             <groupId>com.github.yonathan95</groupId>
             <artifactId>binance-java-sdk</artifactId>
-            <version>1.2.3</version>
+            <version>1.2.4</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
     </dependencies>
