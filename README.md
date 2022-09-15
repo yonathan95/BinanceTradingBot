@@ -1,4 +1,5 @@
-# Binance Trading Bot
+# Binance Trading Bot 
+This repo is no longer supported.
 
 ## Overview
 A crypto trading bot, using Binance exchange futures market.
