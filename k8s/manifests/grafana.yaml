@@ -28,15 +28,10 @@ spec:
         volumeMounts:
         - name: grafana-storage
           mountPath: /var/lib/grafana
-        - name: grafana-provisioning
-          mountPath: /etc/grafana/provisioning
       volumes:
       - name: grafana-storage
         persistentVolumeClaim:
           claimName: grafana-data
-      - name: grafana-provisioning
-        hostPath:
-          path: /hive-mind/docker/grafana/provisioning  # Will need to be adjusted
 ---
 apiVersion: v1
 kind: Service

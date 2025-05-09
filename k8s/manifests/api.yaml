@@ -30,13 +30,8 @@ spec:
           value: "/app"
         - name: COST_DOMAIN_URL
           value: "http://cost-domain-service:8081"
-        volumeMounts:
-        - name: api-code
-          mountPath: /app
-      volumes:
-      - name: api-code
-        hostPath:
-          path: /hive-mind  # Will need to be adjusted based on minikube mount
+        # For Minikube, we'll remove the hostPath volume mount since it's causing issues
+        # and will rely on the files included in the Docker image
 ---
 apiVersion: v1
 kind: Service
