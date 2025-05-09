@@ -1,0 +1,70 @@
+{
+  "id": "ws-001",
+  "name": "Frontend Development",
+  "description": "Workspace for all frontend related projects",
+  "created_at": "2023-06-15T10:30:00Z",
+  "updated_at": "2023-10-22T14:45:00Z",
+  "owner": "John Doe",
+  "members": [
+    {
+      "id": "usr-001",
+      "name": "John Doe",
+      "role": "Owner",
+      "email": "john.doe@example.com"
+    },
+    {
+      "id": "usr-002",
+      "name": "Jane Smith",
+      "role": "Developer",
+      "email": "jane.smith@example.com"
+    },
+    {
+      "id": "usr-003",
+      "name": "Alex Johnson",
+      "role": "Designer",
+      "email": "alex.johnson@example.com"
+    }
+  ],
+  "projects": [
+    {
+      "id": "prj-001",
+      "name": "Company Website",
+      "description": "Corporate website redesign",
+      "status": "In Progress",
+      "created_at": "2023-07-10T09:30:00Z",
+      "updated_at": "2023-10-20T11:15:00Z"
+    },
+    {
+      "id": "prj-002",
+      "name": "Customer Portal",
+      "description": "Self-service portal for customers",
+      "status": "Planning",
+      "created_at": "2023-08-15T13:45:00Z",
+      "updated_at": "2023-10-18T16:30:00Z"
+    },
+    {
+      "id": "prj-003",
+      "name": "Admin Dashboard",
+      "description": "Internal admin management system",
+      "status": "Completed",
+      "created_at": "2023-06-20T10:00:00Z",
+      "updated_at": "2023-09-15T14:20:00Z"
+    },
+    {
+      "id": "prj-004",
+      "name": "E-commerce Store",
+      "description": "Online shopping platform",
+      "status": "In Progress",
+      "created_at": "2023-09-05T11:30:00Z",
+      "updated_at": "2023-10-21T09:45:00Z"
+    },
+    {
+      "id": "prj-005",
+      "name": "Marketing Landing Page",
+      "description": "Campaign landing page",
+      "status": "Planning",
+      "created_at": "2023-10-01T08:15:00Z",
+      "updated_at": "2023-10-22T10:30:00Z"
+    }
+  ]
+} 

@@ -1,0 +1,53 @@
+[
+  {
+    "id": "task-001",
+    "title": "Create responsive UI components",
+    "description": "Design and implement responsive UI components for the dashboard",
+    "assigned_to": null,
+    "assignee_name": null,
+    "assignee_type": null,
+    "priority": "high",
+    "status": "created",
+    "due_date": "2023-12-31",
+    "time_estimate": 8,
+    "progress": 0,
+    "tags": ["frontend", "ui", "react"],
+    "created_by": "user-001",
+    "created_at": "2023-12-01T12:00:00Z",
+    "updated_at": "2023-12-01T12:00:00Z"
+  },
+  {
+    "id": "task-002",
+    "title": "Implement API integration",
+    "description": "Connect frontend to backend API endpoints",
+    "assigned_to": null,
+    "assignee_name": null,
+    "assignee_type": null,
+    "priority": "medium",
+    "status": "created",
+    "due_date": "2023-12-25",
+    "time_estimate": 5,
+    "progress": 0,
+    "tags": ["frontend", "api", "integration"],
+    "created_by": "user-001",
+    "created_at": "2023-12-02T10:00:00Z",
+    "updated_at": "2023-12-02T10:00:00Z"
+  },
+  {
+    "id": "task-003",
+    "title": "Fix authentication bugs",
+    "description": "Resolve issues with user authentication and token handling",
+    "assigned_to": null,
+    "assignee_name": null,
+    "assignee_type": null,
+    "priority": "critical",
+    "status": "created",
+    "due_date": "2023-12-20",
+    "time_estimate": 4,
+    "progress": 0,
+    "tags": ["frontend", "auth", "bugfix"],
+    "created_by": "user-002",
+    "created_at": "2023-12-03T14:00:00Z",
+    "updated_at": "2023-12-03T14:00:00Z"
+  }
+] 

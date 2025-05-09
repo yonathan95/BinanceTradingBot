@@ -1,0 +1,79 @@
+[
+  {
+    "id": "msg-1",
+    "agent": "User",
+    "content": "I need to create a React application with a responsive UI for our e-commerce platform.",
+    "timestamp": "2023-05-02T14:00:00Z",
+    "type": "text"
+  },
+  {
+    "id": "msg-2",
+    "agent": "Manager",
+    "content": "I'll help coordinate this task. Let me break it down and assign responsibilities to our team.",
+    "timestamp": "2023-05-02T14:01:00Z",
+    "type": "text"
+  },
+  {
+    "id": "msg-3",
+    "agent": "Planner",
+    "content": "For an e-commerce platform, we'll need several key components:\n\n1. Homepage with featured products\n2. Product listing page with filters\n3. Product detail page\n4. Shopping cart functionality\n5. Checkout process\n6. User authentication\n\nI suggest we start with the product listing and detail pages since they're core to the experience.",
+    "timestamp": "2023-05-02T14:03:00Z",
+    "type": "text"
+  },
+  {
+    "id": "msg-4",
+    "agent": "Manager",
+    "content": "Great plan. Coder, can you start by creating reusable UI components that we'll need across these pages?",
+    "timestamp": "2023-05-02T14:05:00Z",
+    "type": "text"
+  },
+  {
+    "id": "msg-5",
+    "agent": "Coder",
+    "content": "I'll create the basic components we need. Let me start with a ProductCard component for the listing page.",
+    "timestamp": "2023-05-02T14:08:00Z",
+    "type": "text"
+  },
+  {
+    "id": "msg-6",
+    "agent": "Coder",
+    "content": "Here's the ProductCard component I've created:",
+    "timestamp": "2023-05-02T14:15:00Z",
+    "type": "text"
+  },
+  {
+    "id": "msg-7",
+    "agent": "Coder",
+    "content": "import React from 'react';\nimport styled from 'styled-components';\n\ninterface ProductCardProps {\n  id: string;\n  name: string;\n  price: number;\n  imageUrl: string;\n  onAddToCart: (id: string) => void;\n}\n\nconst Card = styled.div`\n  border: 1px solid #e1e1e1;\n  border-radius: 8px;\n  overflow: hidden;\n  transition: transform 0.3s ease, box-shadow 0.3s ease;\n  width: 100%;\n  max-width: 280px;\n  background-color: white;\n  \n  &:hover {\n    transform: translateY(-5px);\n    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);\n  }\n`;\n\nconst ProductImage = styled.img`\n  width: 100%;\n  height: 200px;\n  object-fit: cover;\n`;\n\nconst ProductInfo = styled.div`\n  padding: 16px;\n`;\n\nconst ProductName = styled.h3`\n  margin: 0 0 8px 0;\n  font-size: 16px;\n  font-weight: 600;\n`;\n\nconst ProductPrice = styled.p`\n  margin: 0 0 16px 0;\n  font-size: 18px;\n  font-weight: 700;\n  color: #2a2a2a;\n`;\n\nconst AddToCartButton = styled.button`\n  background-color: #4a4af4;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  padding: 8px 16px;\n  font-weight: 600;\n  cursor: pointer;\n  width: 100%;\n  transition: background-color 0.2s ease;\n  \n  &:hover {\n    background-color: #3a3ad4;\n  }\n`;\n\nconst ProductCard: React.FC<ProductCardProps> = ({\n  id,\n  name,\n  price,\n  imageUrl,\n  onAddToCart\n}) => {\n  return (\n    <Card>\n      <ProductImage src={imageUrl} alt={name} />\n      <ProductInfo>\n        <ProductName>{name}</ProductName>\n        <ProductPrice>${price.toFixed(2)}</ProductPrice>\n        <AddToCartButton onClick={() => onAddToCart(id)}>\n          Add to Cart\n        </AddToCartButton>\n      </ProductInfo>\n    </Card>\n  );\n};\n\nexport default ProductCard;",
+    "timestamp": "2023-05-02T14:16:00Z",
+    "type": "code"
+  },
+  {
+    "id": "msg-8",
+    "agent": "Tester",
+    "content": "I'll test this component. Some initial feedback:\n\n1. We should add proper error handling for the image loading\n2. The price formatting should handle international currencies\n3. We should consider accessibility - the color contrast might need improvement for the button\n\nI'll create a test case for this component.",
+    "timestamp": "2023-05-02T14:20:00Z",
+    "type": "text"
+  },
+  {
+    "id": "msg-9",
+    "agent": "Manager",
+    "content": "Good feedback. Coder, can you make those updates while Tester prepares the test cases?",
+    "timestamp": "2023-05-02T14:22:00Z",
+    "type": "text"
+  },
+  {
+    "id": "msg-10",
+    "agent": "Coder",
+    "content": "I'll update the component based on the feedback.",
+    "timestamp": "2023-05-02T14:25:00Z",
+    "type": "text"
+  },
+  {
+    "id": "msg-11",
+    "agent": "System",
+    "content": "Task completed: Basic ProductCard component created and reviewed.",
+    "timestamp": "2023-05-02T14:30:00Z",
+    "type": "system"
+  }
+] 

@@ -1,0 +1,118 @@
+[
+  {
+    "id": "dir-1",
+    "name": "src",
+    "type": "directory",
+    "path": "/src",
+    "children": [
+      {
+        "id": "dir-2",
+        "name": "api",
+        "type": "directory",
+        "path": "/src/api",
+        "children": [
+          {
+            "id": "file-1",
+            "name": "products.py",
+            "type": "file",
+            "path": "/src/api/products.py"
+          },
+          {
+            "id": "file-2",
+            "name": "auth.py",
+            "type": "file",
+            "path": "/src/api/auth.py"
+          },
+          {
+            "id": "file-3",
+            "name": "orders.py",
+            "type": "file",
+            "path": "/src/api/orders.py"
+          }
+        ]
+      },
+      {
+        "id": "dir-3",
+        "name": "models",
+        "type": "directory",
+        "path": "/src/models",
+        "children": [
+          {
+            "id": "file-4",
+            "name": "product.py",
+            "type": "file",
+            "path": "/src/models/product.py"
+          },
+          {
+            "id": "file-5",
+            "name": "user.py",
+            "type": "file",
+            "path": "/src/models/user.py"
+          },
+          {
+            "id": "file-6",
+            "name": "order.py",
+            "type": "file",
+            "path": "/src/models/order.py"
+          }
+        ]
+      },
+      {
+        "id": "dir-4",
+        "name": "services",
+        "type": "directory",
+        "path": "/src/services",
+        "children": [
+          {
+            "id": "file-7",
+            "name": "product_service.py",
+            "type": "file",
+            "path": "/src/services/product_service.py"
+          },
+          {
+            "id": "file-8",
+            "name": "auth_service.py",
+            "type": "file",
+            "path": "/src/services/auth_service.py"
+          }
+        ]
+      },
+      {
+        "id": "file-9",
+        "name": "main.py",
+        "type": "file",
+        "path": "/src/main.py"
+      },
+      {
+        "id": "file-10",
+        "name": "database.py",
+        "type": "file",
+        "path": "/src/database.py"
+      },
+      {
+        "id": "file-11",
+        "name": "dependencies.py",
+        "type": "file",
+        "path": "/src/dependencies.py"
+      }
+    ]
+  },
+  {
+    "id": "file-12",
+    "name": "requirements.txt",
+    "type": "file",
+    "path": "/requirements.txt"
+  },
+  {
+    "id": "file-13",
+    "name": "README.md",
+    "type": "file",
+    "path": "/README.md"
+  },
+  {
+    "id": "file-14",
+    "name": "Dockerfile",
+    "type": "file",
+    "path": "/Dockerfile"
+  }
+] 

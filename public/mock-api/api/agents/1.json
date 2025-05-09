@@ -1,0 +1,221 @@
+{
+  "id": "1",
+  "name": "Coder Agent",
+  "role": "Code Writer",
+  "avatar": "/mock-api/images/agent-coder.png",
+  "capabilities": [
+    "JavaScript", 
+    "TypeScript", 
+    "React", 
+    "Node.js", 
+    "API Integration", 
+    "Unit Testing"
+  ],
+  "specializations": [
+    "Frontend Development", 
+    "UI Components", 
+    "State Management"
+  ],
+  "personality": {
+    "traits": [
+      "Analytical", 
+      "Detail-oriented", 
+      "Systematic", 
+      "Pragmatic", 
+      "Thorough"
+    ],
+    "communicationStyle": "Technical"
+  },
+  "performance": {
+    "tasksCompleted": 143,
+    "successRate": 0.92,
+    "averageCompletionTime": 245.3
+  },
+  "feedbackLoop": {
+    "averageIterations": 2.4,
+    "improvementRate": 0.85,
+    "successfulFeedbackCycles": 118
+  },
+  "resourceUsage": {
+    "tokens": 3850432,
+    "computationTime": 412.5,
+    "costToDate": 135.42
+  },
+  "skills": [
+    {
+      "category": "JavaScript",
+      "level": 9
+    },
+    {
+      "category": "TypeScript",
+      "level": 8
+    },
+    {
+      "category": "React",
+      "level": 9
+    },
+    {
+      "category": "CSS/SCSS",
+      "level": 7
+    },
+    {
+      "category": "Node.js",
+      "level": 8
+    },
+    {
+      "category": "Testing",
+      "level": 6
+    },
+    {
+      "category": "CI/CD",
+      "level": 5
+    },
+    {
+      "category": "Database",
+      "level": 6
+    }
+  ],
+  "integrations": [
+    "GitHub", 
+    "Jest", 
+    "Webpack", 
+    "Babel", 
+    "ESLint"
+  ],
+  "recentActivities": [
+    {
+      "id": "act-1",
+      "timestamp": "2023-11-05T15:32:10Z",
+      "action": "Code Generation",
+      "description": "Created React component for user profile page",
+      "associatedTask": "TASK-427"
+    },
+    {
+      "id": "act-2",
+      "timestamp": "2023-11-05T14:10:22Z",
+      "action": "Code Review",
+      "description": "Reviewed pull request for authentication service",
+      "associatedTask": "TASK-422"
+    },
+    {
+      "id": "act-3",
+      "timestamp": "2023-11-05T11:45:33Z",
+      "action": "Bug Fix",
+      "description": "Fixed data fetching issue in dashboard widgets",
+      "associatedTask": "TASK-419"
+    },
+    {
+      "id": "act-4",
+      "timestamp": "2023-11-04T16:22:45Z",
+      "action": "Test Creation",
+      "description": "Created unit tests for utility functions",
+      "associatedTask": "TASK-418"
+    },
+    {
+      "id": "act-5",
+      "timestamp": "2023-11-04T13:11:05Z",
+      "action": "Code Refactoring",
+      "description": "Refactored state management logic for better performance",
+      "associatedTask": "TASK-415"
+    }
+  ],
+  "communicationAnalytics": {
+    "messageFrequency": {
+      "dates": [
+        "2023-10-30", 
+        "2023-10-31", 
+        "2023-11-01", 
+        "2023-11-02", 
+        "2023-11-03", 
+        "2023-11-04", 
+        "2023-11-05"
+      ],
+      "counts": [
+        34, 
+        41, 
+        28, 
+        52, 
+        37, 
+        45, 
+        39
+      ]
+    },
+    "responseTime": {
+      "averageMs": 3240,
+      "distribution": [
+        {
+          "range": "<1s",
+          "count": 12
+        },
+        {
+          "range": "1-5s",
+          "count": 87
+        },
+        {
+          "range": "5-10s",
+          "count": 124
+        },
+        {
+          "range": "10-30s",
+          "count": 42
+        },
+        {
+          "range": ">30s",
+          "count": 11
+        }
+      ]
+    },
+    "sentiment": {
+      "positive": 68,
+      "neutral": 27,
+      "negative": 5
+    },
+    "topicsByFrequency": [
+      {
+        "topic": "Code Structure",
+        "count": 47
+      },
+      {
+        "topic": "Bug Fixes",
+        "count": 35
+      },
+      {
+        "topic": "Testing",
+        "count": 28
+      },
+      {
+        "topic": "Performance",
+        "count": 22
+      },
+      {
+        "topic": "Documentation",
+        "count": 18
+      },
+      {
+        "topic": "Security",
+        "count": 12
+      }
+    ],
+    "collaborationByAgent": [
+      {
+        "agentId": "2",
+        "agentName": "Manager Agent",
+        "messageCount": 87,
+        "collaborationScore": 8.4
+      },
+      {
+        "agentId": "3",
+        "agentName": "Tester Agent",
+        "messageCount": 105,
+        "collaborationScore": 9.2
+      },
+      {
+        "agentId": "4",
+        "agentName": "Planner Agent",
+        "messageCount": 42,
+        "collaborationScore": 7.8
+      }
+    ],
+    "communicationEfficiency": 0.87
+  }
+} 

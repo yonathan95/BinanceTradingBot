@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Debug Page</title>
+  <style>
+    body {
+      background-color: #121926;
+      color: white;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .card {
+      background-color: #202939;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+    }
+    h1 {
+      color: #3C5CFE;
+    }
+    .btn {
+      background-color: #3C5CFE;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    .btn:hover {
+      background-color: #5D79FF;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Debug Page</h1>
+    <p>If you can see this page, basic HTML and CSS are working correctly.</p>
+    <p>The main application might have a JavaScript error preventing it from rendering.</p>
+    <button class="btn" onclick="checkConsole()">Check Console for Errors</button>
+  </div>
+
+  <script>
+    function checkConsole() {
+      console.log('Debug function called - please check your browser console for any errors');
+      alert('Please open your browser console (F12) to see if there are any errors.');
+    }
+  </script>
+</body>
+</html> 

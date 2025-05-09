@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api
+  namespace: hivemind
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api
+  template:
+    metadata:
+      labels:
+        app: api
+    spec:
+      containers:
+      - name: api
+        image: hivemind-api:latest
+        imagePullPolicy: IfNotPresent  # Use Always in production
+        ports:
+        - containerPort: 5000
+        env:
+        - name: DATABASE_URL
+          value: "postgresql+asyncpg://hivemind:hivemindpass@postgres-service:5432/hivemind"
+        - name: SECRET_KEY
+          value: "hive_mind_super_secret_key_change_in_production"
+        - name: DEBUG
+          value: "true"
+        - name: PYTHONPATH
+          value: "/app"
+        - name: COST_DOMAIN_URL
+          value: "http://cost-domain-service:8081"
+        volumeMounts:
+        - name: api-code
+          mountPath: /app
+      volumes:
+      - name: api-code
+        hostPath:
+          path: /hive-mind  # Will need to be adjusted based on minikube mount
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: api-service
+  namespace: hivemind
+spec:
+  selector:
+    app: api
+  ports:
+  - port: 5000
+    targetPort: 5000
+  type: ClusterIP 

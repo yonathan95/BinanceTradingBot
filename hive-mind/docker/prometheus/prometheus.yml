@@ -1,0 +1,21 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  - job_name: 'control-plane'
+    static_configs:
+      - targets: ['control-plane:8000']
+
+  - job_name: 'cost-domain'
+    static_configs:
+      - targets: ['cost-domain:8181']
+
+  - job_name: 'hivemind-api'
+    metrics_path: /metrics
+    static_configs:
+      - targets: ['api:5000'] 

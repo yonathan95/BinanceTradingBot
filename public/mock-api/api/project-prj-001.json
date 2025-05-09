@@ -1,0 +1,90 @@
+{
+  "id": "prj-001",
+  "name": "Company Website",
+  "description": "Corporate website redesign with modern UI/UX and improved performance",
+  "workspace_id": "ws-001",
+  "status": "In Progress",
+  "created_at": "2023-07-10T09:30:00Z",
+  "updated_at": "2023-10-20T11:15:00Z",
+  "members": [
+    {
+      "id": "usr-001",
+      "name": "John Doe",
+      "role": "Project Lead",
+      "email": "john.doe@example.com"
+    },
+    {
+      "id": "usr-002",
+      "name": "Jane Smith",
+      "role": "Developer",
+      "email": "jane.smith@example.com"
+    },
+    {
+      "id": "usr-003",
+      "name": "Alex Johnson",
+      "role": "UI/UX Designer",
+      "email": "alex.johnson@example.com"
+    }
+  ],
+  "files": [
+    {
+      "id": "file-001",
+      "name": "index.html",
+      "path": "/src/index.html",
+      "type": "html",
+      "size": 2048,
+      "last_modified": "2023-10-18T14:30:00Z"
+    },
+    {
+      "id": "file-002",
+      "name": "styles.css",
+      "path": "/src/styles/main.css",
+      "type": "css",
+      "size": 4096,
+      "last_modified": "2023-10-19T10:15:00Z"
+    },
+    {
+      "id": "file-003",
+      "name": "app.js",
+      "path": "/src/js/app.js",
+      "type": "javascript",
+      "size": 8192,
+      "last_modified": "2023-10-20T09:45:00Z"
+    }
+  ],
+  "metrics": {
+    "progress": 65,
+    "tasks_completed": 24,
+    "tasks_total": 37,
+    "commits_last_week": 15,
+    "collaboration_score": 8.2,
+    "last_activity": "2023-10-20T11:15:00Z"
+  },
+  "history": [
+    {
+      "date": "2023-07-10T09:30:00Z",
+      "event": "Project created",
+      "user": "John Doe"
+    },
+    {
+      "date": "2023-08-15T14:20:00Z",
+      "event": "Design phase completed",
+      "user": "Alex Johnson"
+    },
+    {
+      "date": "2023-09-22T10:45:00Z",
+      "event": "Frontend development started",
+      "user": "Jane Smith"
+    },
+    {
+      "date": "2023-10-10T16:30:00Z",
+      "event": "Homepage implemented",
+      "user": "Jane Smith"
+    },
+    {
+      "date": "2023-10-20T11:15:00Z",
+      "event": "About page completed",
+      "user": "Jane Smith"
+    }
+  ]
+} 

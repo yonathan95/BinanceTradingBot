@@ -1,0 +1,40 @@
+{
+  "id": "team-1",
+  "name": "Web App Development",
+  "description": "Team focused on creating a modern React web application with responsive design and optimized performance",
+  "agents": 4,
+  "tasks": 8,
+  "lastActive": "2023-05-02T14:30:00Z",
+  "status": "active",
+  "roles": ["manager", "planner", "coder", "tester"],
+  "model_tier": "standard",
+  "budget_limit": 100,
+  "budget_used": 42.75,
+  "created_at": "2023-04-15T09:00:00Z",
+  "members": [
+    {
+      "role": "manager",
+      "name": "Manager Agent",
+      "status": "active",
+      "capabilities": ["Task coordination", "Progress tracking", "Team supervision"]
+    },
+    {
+      "role": "planner",
+      "name": "Planner Agent",
+      "status": "active",
+      "capabilities": ["Project breakdown", "Task prioritization", "Timeline planning"]
+    },
+    {
+      "role": "coder",
+      "name": "Coder Agent",
+      "status": "active",
+      "capabilities": ["Code implementation", "Bug fixing", "Code optimization"]
+    },
+    {
+      "role": "tester",
+      "name": "Tester Agent",
+      "status": "active",
+      "capabilities": ["Test creation", "Quality assurance", "Bug reporting"]
+    }
+  ]
+} 

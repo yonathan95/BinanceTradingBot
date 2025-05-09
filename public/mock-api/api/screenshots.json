@@ -1,0 +1,11 @@
+{
+  "success": true,
+  "message": "Screenshot recorded successfully",
+  "data": {
+    "id": "screenshot-123",
+    "path": "/path/to/screenshot.png",
+    "timestamp": "2023-07-15T12:34:56.789Z",
+    "teamId": "team-1",
+    "recorded": true
+  }
+} 

@@ -1,0 +1,74 @@
+[
+  {
+    "id": "dir-1",
+    "name": "src",
+    "type": "directory",
+    "path": "/src",
+    "children": [
+      {
+        "id": "dir-2",
+        "name": "components",
+        "type": "directory",
+        "path": "/src/components",
+        "children": [
+          {
+            "id": "file-1",
+            "name": "Button.tsx",
+            "type": "file",
+            "path": "/src/components/Button.tsx"
+          },
+          {
+            "id": "file-2",
+            "name": "Card.tsx",
+            "type": "file",
+            "path": "/src/components/Card.tsx"
+          },
+          {
+            "id": "file-3",
+            "name": "Header.tsx",
+            "type": "file",
+            "path": "/src/components/Header.tsx"
+          }
+        ]
+      },
+      {
+        "id": "dir-3",
+        "name": "pages",
+        "type": "directory",
+        "path": "/src/pages",
+        "children": [
+          {
+            "id": "file-4",
+            "name": "Home.tsx",
+            "type": "file",
+            "path": "/src/pages/Home.tsx"
+          },
+          {
+            "id": "file-5",
+            "name": "About.tsx",
+            "type": "file",
+            "path": "/src/pages/About.tsx"
+          }
+        ]
+      },
+      {
+        "id": "file-6",
+        "name": "App.tsx",
+        "type": "file",
+        "path": "/src/App.tsx"
+      }
+    ]
+  },
+  {
+    "id": "file-7",
+    "name": "package.json",
+    "type": "file",
+    "path": "/package.json"
+  },
+  {
+    "id": "file-8",
+    "name": "README.md",
+    "type": "file",
+    "path": "/README.md"
+  }
+] 

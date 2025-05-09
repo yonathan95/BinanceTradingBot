@@ -1,0 +1,90 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:14
+    container_name: hivemind-db
+    environment:
+      POSTGRES_USER: hivemind
+      POSTGRES_PASSWORD: hivemindpass
+      POSTGRES_DB: hivemind
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U hivemind"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build:
+      context: ./hive-mind
+      dockerfile: docker/Dockerfile.backend
+    container_name: hivemind-api
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://hivemind:hivemindpass@db:5432/hivemind
+      - SECRET_KEY=hive_mind_super_secret_key_change_in_production
+      - DEBUG=true
+      - PYTHONPATH=/app
+      - COST_DOMAIN_URL=http://cost-domain:8081
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./hive-mind:/app
+    restart: unless-stopped
+
+  cost-domain:
+    build:
+      context: ./hive-mind/cost-domain
+      dockerfile: Dockerfile
+    container_name: hivemind-cost-domain
+    ports:
+      - "8081:8081"
+    environment:
+      - PORT=8081
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8081/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  prometheus:
+    image: prom/prometheus:v2.42.0
+    container_name: hivemind-prometheus
+    volumes:
+      - ./hive-mind/docker/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    ports:
+      - "9090:9090"
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana:9.5.1
+    container_name: hivemind-grafana
+    volumes:
+      - ./hive-mind/docker/grafana/provisioning:/etc/grafana/provisioning
+      - grafana_data:/var/lib/grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_USERS_ALLOW_SIGN_UP=false
+    depends_on:
+      - prometheus
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+  prometheus_data:
+  grafana_data: 

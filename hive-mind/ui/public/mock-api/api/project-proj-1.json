@@ -1,0 +1,86 @@
+{
+  "id": "proj-1",
+  "name": "Frontend Application",
+  "description": "Customer-facing web application",
+  "createdAt": "2025-01-20T14:00:00Z",
+  "updatedAt": "2025-04-29T10:15:00Z",
+  "workspaceId": "ws-001",
+  "status": "active",
+  "tasks": [
+    {
+      "id": "task-1",
+      "title": "Implement authentication flow",
+      "description": "Create login, registration, and password reset pages with proper validation",
+      "status": "todo",
+      "priority": "high",
+      "createdAt": "2025-04-10T09:00:00Z",
+      "dueDate": "2025-05-15T17:00:00Z"
+    },
+    {
+      "id": "task-2",
+      "title": "Fix responsive layout issues",
+      "description": "Address mobile layout problems on the dashboard and product pages",
+      "status": "in-progress",
+      "assignee": "Developer 1",
+      "priority": "medium",
+      "createdAt": "2025-04-12T14:30:00Z",
+      "dueDate": "2025-05-10T17:00:00Z"
+    },
+    {
+      "id": "task-3",
+      "title": "Add unit tests for API",
+      "description": "Create comprehensive test suite for all API interactions",
+      "status": "todo",
+      "priority": "medium",
+      "createdAt": "2025-04-15T11:20:00Z",
+      "dueDate": "2025-05-20T17:00:00Z"
+    },
+    {
+      "id": "task-4",
+      "title": "Update documentation",
+      "description": "Revise and expand component documentation for developers",
+      "status": "review",
+      "assignee": "Developer 2",
+      "priority": "low",
+      "createdAt": "2025-04-18T10:00:00Z",
+      "dueDate": "2025-05-05T17:00:00Z"
+    },
+    {
+      "id": "task-5",
+      "title": "Optimize database queries",
+      "description": "Improve performance of data fetching operations",
+      "status": "done",
+      "assignee": "Developer 3",
+      "priority": "high",
+      "createdAt": "2025-04-05T15:45:00Z",
+      "completedAt": "2025-04-25T16:30:00Z"
+    }
+  ],
+  "members": [
+    {
+      "id": "user-1",
+      "name": "John Doe",
+      "role": "Project Lead",
+      "avatar": null
+    },
+    {
+      "id": "user-2",
+      "name": "Jane Smith",
+      "role": "Frontend Developer",
+      "avatar": null
+    },
+    {
+      "id": "user-5",
+      "name": "Alex Brown",
+      "role": "UI/UX Designer",
+      "avatar": null
+    }
+  ],
+  "statistics": {
+    "totalTasks": 8,
+    "completedTasks": 3,
+    "inProgressTasks": 3,
+    "pendingTasks": 2,
+    "overdueTasks": 0
+  }
+} 

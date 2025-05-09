@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cost-domain
+  namespace: hivemind
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cost-domain
+  template:
+    metadata:
+      labels:
+        app: cost-domain
+    spec:
+      containers:
+      - name: cost-domain
+        image: hivemind-cost-domain:latest
+        imagePullPolicy: IfNotPresent  # Use Always in production
+        ports:
+        - containerPort: 8081
+        env:
+        - name: PORT
+          value: "8081"
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8081
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 8081
+          initialDelaySeconds: 5
+          periodSeconds: 10
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cost-domain-service
+  namespace: hivemind
+spec:
+  selector:
+    app: cost-domain
+  ports:
+  - port: 8081
+    targetPort: 8081
+  type: ClusterIP 

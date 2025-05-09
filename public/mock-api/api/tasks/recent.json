@@ -1,0 +1,62 @@
+[
+  {
+    "id": "task-1",
+    "goal": "Create responsive product card component",
+    "team": "Web App Development",
+    "status": "completed",
+    "complexity": "M",
+    "budget": 15.50,
+    "progress": 100,
+    "created_at": "2023-05-02T14:00:00Z"
+  },
+  {
+    "id": "task-2",
+    "goal": "Implement product list page with filtering",
+    "team": "Web App Development",
+    "status": "in_progress",
+    "complexity": "H",
+    "budget": 25.00,
+    "progress": 60,
+    "created_at": "2023-05-02T16:00:00Z"
+  },
+  {
+    "id": "task-3",
+    "goal": "Design and implement shopping cart functionality",
+    "team": "Web App Development",
+    "status": "pending",
+    "complexity": "H",
+    "budget": 30.00,
+    "progress": 0,
+    "created_at": "2023-05-02T18:00:00Z"
+  },
+  {
+    "id": "task-4",
+    "goal": "Create RESTful API endpoints for products",
+    "team": "API Backend Team",
+    "status": "in_progress",
+    "complexity": "M",
+    "budget": 20.00,
+    "progress": 75,
+    "created_at": "2023-05-01T10:00:00Z"
+  },
+  {
+    "id": "task-5",
+    "goal": "Implement user authentication API",
+    "team": "API Backend Team",
+    "status": "completed",
+    "complexity": "H",
+    "budget": 35.00,
+    "progress": 100,
+    "created_at": "2023-04-28T09:00:00Z"
+  },
+  {
+    "id": "task-6",
+    "goal": "Train product recommendation model",
+    "team": "ML Model Training",
+    "status": "in_progress",
+    "complexity": "H",
+    "budget": 50.00,
+    "progress": 30,
+    "created_at": "2023-04-28T14:00:00Z"
+  }
+] 

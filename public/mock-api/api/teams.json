@@ -1,0 +1,41 @@
+[
+  {
+    "id": "team-1",
+    "name": "Web App Development",
+    "description": "Team focused on creating a modern React web application",
+    "agents": 4,
+    "tasks": 8,
+    "lastActive": "2023-05-02T14:30:00Z",
+    "status": "active",
+    "roles": ["manager", "planner", "coder", "tester"],
+    "model_tier": "standard",
+    "budget_limit": 100,
+    "budget_used": 42.75
+  },
+  {
+    "id": "team-2",
+    "name": "API Backend Team",
+    "description": "Building a scalable FastAPI backend service",
+    "agents": 3,
+    "tasks": 5,
+    "lastActive": "2023-05-01T10:15:00Z",
+    "status": "active",
+    "roles": ["manager", "architect", "coder"],
+    "model_tier": "premium",
+    "budget_limit": 200,
+    "budget_used": 89.50
+  },
+  {
+    "id": "team-3",
+    "name": "ML Model Training",
+    "description": "Developing and training machine learning models",
+    "agents": 5,
+    "tasks": 3,
+    "lastActive": "2023-04-28T16:45:00Z",
+    "status": "idle",
+    "roles": ["manager", "planner", "architect", "coder", "tester"],
+    "model_tier": "premium",
+    "budget_limit": 300,
+    "budget_used": 210.25
+  }
+] 

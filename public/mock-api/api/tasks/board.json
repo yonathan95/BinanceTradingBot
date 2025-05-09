@@ -1,0 +1,174 @@
+[
+  {
+    "id": "column-1",
+    "title": "To Do",
+    "tasks": [
+      {
+        "id": "task-1",
+        "title": "Create responsive product card component",
+        "description": "Design and implement a responsive product card component that works well on all screen sizes.",
+        "assignee": {
+          "id": "usr-001",
+          "name": "John Doe",
+          "type": "human"
+        },
+        "priority": "Medium",
+        "status": "To Do",
+        "dueDate": "2023-07-15T00:00:00Z",
+        "timeEstimate": 8,
+        "tags": ["UI", "Frontend"],
+        "comments": [
+          {
+            "id": "comment-1",
+            "author": {
+              "id": "agent-001",
+              "name": "Code Agent",
+              "type": "agent"
+            },
+            "content": "I suggest using Flexbox for the responsive layout.",
+            "timestamp": "2023-07-01T10:30:00Z"
+          }
+        ],
+        "createdAt": "2023-06-28T14:00:00Z",
+        "updatedAt": "2023-07-01T10:30:00Z"
+      },
+      {
+        "id": "task-3",
+        "title": "Design and implement shopping cart functionality",
+        "description": "Create a shopping cart that allows users to add, remove, and update quantities of products.",
+        "assignee": {
+          "id": "usr-002",
+          "name": "Jane Smith",
+          "type": "human"
+        },
+        "priority": "High",
+        "status": "To Do",
+        "dueDate": "2023-07-20T00:00:00Z",
+        "timeEstimate": 16,
+        "tags": ["UI", "Frontend", "UX"],
+        "comments": [],
+        "createdAt": "2023-06-29T18:00:00Z",
+        "updatedAt": "2023-06-29T18:00:00Z"
+      }
+    ]
+  },
+  {
+    "id": "column-2",
+    "title": "In Progress",
+    "tasks": [
+      {
+        "id": "task-2",
+        "title": "Implement product list page with filtering",
+        "description": "Create the product listing page with filtering options for categories, price range, and other attributes.",
+        "assignee": {
+          "id": "agent-002",
+          "name": "UI Helper",
+          "type": "agent"
+        },
+        "priority": "High",
+        "status": "In Progress",
+        "dueDate": "2023-07-10T00:00:00Z",
+        "timeEstimate": 12,
+        "tags": ["UI", "Frontend", "Filtering"],
+        "comments": [
+          {
+            "id": "comment-2",
+            "author": {
+              "id": "agent-002",
+              "name": "UI Helper",
+              "type": "agent"
+            },
+            "content": "Working on the filter component. Will be ready for review soon.",
+            "timestamp": "2023-07-02T09:45:00Z"
+          },
+          {
+            "id": "comment-3",
+            "author": {
+              "id": "usr-001",
+              "name": "John Doe",
+              "type": "human"
+            },
+            "content": "Make sure to add clear filters button.",
+            "timestamp": "2023-07-02T10:15:00Z"
+          }
+        ],
+        "createdAt": "2023-06-28T16:00:00Z",
+        "updatedAt": "2023-07-02T10:15:00Z"
+      },
+      {
+        "id": "task-4",
+        "title": "Create RESTful API endpoints for products",
+        "description": "Implement RESTful API endpoints for product CRUD operations.",
+        "assignee": {
+          "id": "usr-003",
+          "name": "Alex Johnson",
+          "type": "human"
+        },
+        "priority": "Medium",
+        "status": "In Progress",
+        "dueDate": "2023-07-12T00:00:00Z",
+        "timeEstimate": 10,
+        "tags": ["API", "Backend"],
+        "comments": [
+          {
+            "id": "comment-4",
+            "author": {
+              "id": "agent-003",
+              "name": "API Tester",
+              "type": "agent"
+            },
+            "content": "I've detected some issues with the response format. Let's discuss.",
+            "timestamp": "2023-07-03T14:20:00Z"
+          }
+        ],
+        "createdAt": "2023-06-30T10:00:00Z",
+        "updatedAt": "2023-07-03T14:20:00Z"
+      }
+    ]
+  },
+  {
+    "id": "column-3",
+    "title": "Done",
+    "tasks": [
+      {
+        "id": "task-5",
+        "title": "Implement user authentication API",
+        "description": "Create APIs for user registration, login, and authentication.",
+        "assignee": {
+          "id": "usr-003",
+          "name": "Alex Johnson",
+          "type": "human"
+        },
+        "priority": "High",
+        "status": "Done",
+        "dueDate": "2023-06-25T00:00:00Z",
+        "timeEstimate": 20,
+        "tags": ["API", "Backend", "Security"],
+        "comments": [
+          {
+            "id": "comment-5",
+            "author": {
+              "id": "agent-001",
+              "name": "Code Agent",
+              "type": "agent"
+            },
+            "content": "Code review completed. Looks good!",
+            "timestamp": "2023-06-24T11:30:00Z"
+          },
+          {
+            "id": "comment-6",
+            "author": {
+              "id": "usr-001",
+              "name": "John Doe",
+              "type": "human"
+            },
+            "content": "This is ready for deployment.",
+            "timestamp": "2023-06-24T15:45:00Z"
+          }
+        ],
+        "createdAt": "2023-06-15T09:00:00Z",
+        "updatedAt": "2023-06-24T15:45:00Z"
+      }
+    ]
+  }
+] 

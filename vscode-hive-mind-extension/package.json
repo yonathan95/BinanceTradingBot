@@ -1,0 +1,87 @@
+{
+  "name": "vscode-hive-mind-extension",
+  "displayName": "Hive Mind",
+  "description": "Control Git branch and commit context via backend commands",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished",
+    "onCommand:hivemind.connect",
+    "onCommand:hivemind.disconnect",
+    "onCommand:hivemind.connectCustom",
+    "onCommand:hivemind.grantPermission",
+    "onCommand:hivemind.denyPermission",
+    "workspaceContains:.git"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "hivemind.connect",
+        "title": "Hive Mind: Connect to Backend"
+      },
+      {
+        "command": "hivemind.disconnect",
+        "title": "Hive Mind: Disconnect from Backend"
+      },
+      {
+        "command": "hivemind.showStatus",
+        "title": "Hive Mind: Show Connection Status"
+      },
+      {
+        "command": "hivemind.connectCustom",
+        "title": "Hive Mind: Connect to Custom Backend URL"
+      },
+      {
+        "command": "hivemind.grantPermission",
+        "title": "Hive Mind: Grant Permission"
+      },
+      {
+        "command": "hivemind.denyPermission",
+        "title": "Hive Mind: Deny Permission"
+      }
+    ],
+    "configuration": {
+      "title": "Hive Mind",
+      "properties": {
+        "hivemind.backendUrl": {
+          "type": "string",
+          "default": "http://localhost:5000",
+          "description": "URL of the Hive Mind backend service"
+        },
+        "hivemind.autoConnect": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically connect to the backend on startup"
+        },
+        "hivemind.trackFileChanges": {
+          "type": "boolean",
+          "default": true,
+          "description": "Track file changes and send them to the backend"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.60.0",
+    "@types/glob": "^7.1.3",
+    "@types/node": "^14.17.0",
+    "eslint": "^7.32.0",
+    "glob": "^7.1.7",
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "socket.io-client": "^4.1.3"
+  }
+} 

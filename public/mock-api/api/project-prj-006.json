@@ -1,0 +1,103 @@
+{
+  "id": "prj-006",
+  "name": "iOS Shopping App",
+  "description": "Native iOS application for e-commerce with personalized recommendations and checkout",
+  "workspace_id": "ws-003",
+  "status": "In Progress",
+  "created_at": "2023-08-10T10:30:00Z",
+  "updated_at": "2023-10-19T14:45:00Z",
+  "members": [
+    {
+      "id": "usr-003",
+      "name": "Alex Johnson",
+      "role": "Project Lead",
+      "email": "alex.johnson@example.com"
+    },
+    {
+      "id": "usr-004",
+      "name": "Sarah Wilson",
+      "role": "iOS Developer",
+      "email": "sarah.wilson@example.com"
+    },
+    {
+      "id": "usr-005",
+      "name": "Mike Chen",
+      "role": "QA Engineer",
+      "email": "mike.chen@example.com"
+    }
+  ],
+  "files": [
+    {
+      "id": "file-101",
+      "name": "AppDelegate.swift",
+      "path": "/src/AppDelegate.swift",
+      "type": "swift",
+      "size": 3584,
+      "last_modified": "2023-08-15T11:20:00Z"
+    },
+    {
+      "id": "file-102",
+      "name": "ProductsViewController.swift",
+      "path": "/src/ViewControllers/ProductsViewController.swift",
+      "type": "swift",
+      "size": 6144,
+      "last_modified": "2023-10-05T09:45:00Z"
+    },
+    {
+      "id": "file-103",
+      "name": "CartManager.swift",
+      "path": "/src/Models/CartManager.swift",
+      "type": "swift",
+      "size": 4096,
+      "last_modified": "2023-10-15T13:10:00Z"
+    },
+    {
+      "id": "file-104",
+      "name": "Product.swift",
+      "path": "/src/Models/Product.swift",
+      "type": "swift",
+      "size": 1792,
+      "last_modified": "2023-09-18T15:30:00Z"
+    }
+  ],
+  "metrics": {
+    "progress": 72,
+    "tasks_completed": 18,
+    "tasks_total": 25,
+    "commits_last_week": 12,
+    "collaboration_score": 7.8,
+    "last_activity": "2023-10-19T14:45:00Z"
+  },
+  "history": [
+    {
+      "date": "2023-08-10T10:30:00Z",
+      "event": "Project created",
+      "user": "Alex Johnson"
+    },
+    {
+      "date": "2023-08-25T14:00:00Z",
+      "event": "UI mockups completed",
+      "user": "Alex Johnson"
+    },
+    {
+      "date": "2023-09-10T11:15:00Z",
+      "event": "Core data models implemented",
+      "user": "Sarah Wilson"
+    },
+    {
+      "date": "2023-09-30T15:30:00Z",
+      "event": "Product listing view completed",
+      "user": "Sarah Wilson"
+    },
+    {
+      "date": "2023-10-15T13:10:00Z",
+      "event": "Shopping cart functionality added",
+      "user": "Sarah Wilson"
+    },
+    {
+      "date": "2023-10-19T14:45:00Z",
+      "event": "UI testing completed for product pages",
+      "user": "Mike Chen"
+    }
+  ]
+} 

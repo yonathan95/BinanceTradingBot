@@ -1,0 +1,79 @@
+{
+  "id": "ws-001",
+  "name": "Frontend Development",
+  "description": "Workspace for all frontend related projects with enhanced AI collaboration",
+  "createdAt": "2025-01-15T10:00:00Z",
+  "updatedAt": "2025-05-01T14:30:00Z",
+  "teamId": "team-1",
+  "projects": [
+    {
+      "id": "proj-1",
+      "name": "Frontend Application",
+      "description": "Customer-facing web application",
+      "createdAt": "2025-01-20T14:00:00Z",
+      "updatedAt": "2025-04-29T10:15:00Z",
+      "status": "active",
+      "taskCount": 8
+    },
+    {
+      "id": "proj-2",
+      "name": "Backend API",
+      "description": "RESTful API services",
+      "createdAt": "2025-01-25T09:30:00Z",
+      "updatedAt": "2025-04-30T11:20:00Z",
+      "status": "active",
+      "taskCount": 12
+    },
+    {
+      "id": "proj-3",
+      "name": "Database Layer",
+      "description": "Data persistence and access",
+      "createdAt": "2025-02-02T13:45:00Z",
+      "updatedAt": "2025-04-28T16:00:00Z",
+      "status": "active",
+      "taskCount": 5
+    },
+    {
+      "id": "proj-4",
+      "name": "DevOps Pipeline",
+      "description": "CI/CD automation",
+      "createdAt": "2025-02-15T10:10:00Z",
+      "updatedAt": "2025-05-02T09:45:00Z",
+      "status": "active",
+      "taskCount": 7
+    }
+  ],
+  "members": [
+    {
+      "id": "user-1",
+      "name": "John Doe",
+      "role": "Team Lead",
+      "avatar": null
+    },
+    {
+      "id": "user-2",
+      "name": "Jane Smith",
+      "role": "Senior Developer",
+      "avatar": null
+    },
+    {
+      "id": "user-3",
+      "name": "Mike Johnson",
+      "role": "DevOps Engineer",
+      "avatar": null
+    },
+    {
+      "id": "user-4",
+      "name": "Sarah Williams",
+      "role": "Database Administrator",
+      "avatar": null
+    }
+  ],
+  "statistics": {
+    "totalProjects": 4,
+    "totalTasks": 32,
+    "completedTasks": 14,
+    "inProgressTasks": 12,
+    "pendingTasks": 6
+  }
+} 

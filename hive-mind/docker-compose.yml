@@ -1,0 +1,240 @@
+version: '3.8'
+
+services:
+  # Control Plane API
+  control-plane:
+    build:
+      context: ./control-plane
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@db:5432/hivemind
+      - RABBITMQ_URL=amqp://guest:guest@rabbitmq:5672/
+      - QDRANT_URL=http://qdrant:6333
+      - LOG_LEVEL=DEBUG
+      - ENV=development
+    volumes:
+      - ./control-plane:/app
+    depends_on:
+      - db
+      - rabbitmq
+      - qdrant
+    restart: unless-stopped
+
+  # Agent Workers (one container per agent type for development)
+  manager-agent:
+    build:
+      context: .
+      dockerfile: ./agents/manager/Dockerfile
+    environment:
+      - RABBITMQ_URL=amqp://guest:guest@rabbitmq:5672/
+      - CONTROL_PLANE_URL=http://control-plane:8000
+      - LOG_LEVEL=DEBUG
+      - ENV=development
+    volumes:
+      - ./agents:/app/agents
+      - ./workspaces:/workspaces
+    depends_on:
+      - rabbitmq
+      - control-plane
+    restart: unless-stopped
+
+  planner-agent:
+    build:
+      context: .
+      dockerfile: ./agents/planner/Dockerfile
+    environment:
+      - RABBITMQ_URL=amqp://guest:guest@rabbitmq:5672/
+      - CONTROL_PLANE_URL=http://control-plane:8000
+      - LOG_LEVEL=DEBUG
+      - ENV=development
+    volumes:
+      - ./agents:/app/agents
+      - ./workspaces:/workspaces
+    depends_on:
+      - rabbitmq
+      - control-plane
+    restart: unless-stopped
+
+  coder-agent:
+    build:
+      context: .
+      dockerfile: ./agents/coder/Dockerfile
+    environment:
+      - RABBITMQ_URL=amqp://guest:guest@rabbitmq:5672/
+      - CONTROL_PLANE_URL=http://control-plane:8000
+      - LOG_LEVEL=DEBUG
+      - ENV=development
+    volumes:
+      - ./agents:/app/agents
+      - ./workspaces:/workspaces
+    depends_on:
+      - rabbitmq
+      - control-plane
+    restart: unless-stopped
+
+  tester-agent:
+    build:
+      context: .
+      dockerfile: ./agents/tester/Dockerfile
+    environment:
+      - RABBITMQ_URL=amqp://guest:guest@rabbitmq:5672/
+      - CONTROL_PLANE_URL=http://control-plane:8000
+      - LOG_LEVEL=DEBUG
+      - ENV=development
+    volumes:
+      - ./agents:/app/agents
+      - ./workspaces:/workspaces
+    depends_on:
+      - rabbitmq
+      - control-plane
+    restart: unless-stopped
+
+  # Cost Domain Manager
+  cost-domain:
+    build:
+      context: ./cost-domain
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - REDIS_URL=redis://redis:6379
+      - LOCAL_MODE=false
+      - FORECAST_WINDOW_DAYS=7
+      - SAVE_INTERVAL_SECONDS=300
+      - LOG_LEVEL=DEBUG
+      - ENV=development
+    volumes:
+      - ./cost-domain:/app
+    depends_on:
+      - redis
+    restart: unless-stopped
+
+  # Task Orchestrator
+  task-orchestrator:
+    build:
+      context: ./task-orchestrator
+      dockerfile: Dockerfile
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@db:5432/hivemind
+      - RABBITMQ_URL=amqp://guest:guest@rabbitmq:5672/
+      - REDIS_URL=redis://redis:6379
+      - LOG_LEVEL=DEBUG
+      - ENV=development
+    volumes:
+      - ./task-orchestrator:/app
+    depends_on:
+      - db
+      - rabbitmq
+      - redis
+    restart: unless-stopped
+
+  # UI Development Server
+  ui:
+    build:
+      context: ./ui
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_API_URL=http://localhost:8000
+      - REACT_APP_WS_URL=ws://localhost:8000/ws
+    volumes:
+      - ./ui:/app
+      - /app/node_modules
+    restart: unless-stopped
+
+  # PostgreSQL Database
+  db:
+    image: postgres:14-alpine
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=hivemind
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  # RabbitMQ for message queuing
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    restart: unless-stopped
+
+  # Redis for Task Orchestrator and Cost Domain Manager
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    restart: unless-stopped
+
+  # Qdrant for vector storage
+  qdrant:
+    image: qdrant/qdrant:latest
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - qdrant_data:/qdrant/storage
+    restart: unless-stopped
+
+  # Monitoring
+  prometheus:
+    image: prom/prometheus:latest
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./docker/prometheus:/etc/prometheus
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/usr/share/prometheus/console_libraries'
+      - '--web.console.templates=/usr/share/prometheus/consoles'
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3001:3000"
+    volumes:
+      - ./docker/grafana/provisioning:/etc/grafana/provisioning
+      - grafana_data:/var/lib/grafana
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_USERS_ALLOW_SIGN_UP=false
+    depends_on:
+      - prometheus
+    restart: unless-stopped
+
+  hive-mind-backend:
+    build:
+      context: ./
+      dockerfile: ./docker/Dockerfile.backend
+    ports:
+      - "5000:5000"
+    environment:
+      - PORT=5000
+      - HOST=0.0.0.0
+    volumes:
+      - ./:/app
+    restart: unless-stopped
+    command: python control-plane/main.py
+
+volumes:
+  postgres_data:
+  rabbitmq_data:
+  redis_data:
+  qdrant_data:
+  prometheus_data:
+  grafana_data: 

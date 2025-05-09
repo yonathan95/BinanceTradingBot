@@ -1,0 +1,160 @@
+[
+  {
+    "id": "dir-1",
+    "name": "src",
+    "type": "directory",
+    "path": "/src",
+    "children": [
+      {
+        "id": "dir-2",
+        "name": "models",
+        "type": "directory",
+        "path": "/src/models",
+        "children": [
+          {
+            "id": "file-1",
+            "name": "collaborative.py",
+            "type": "file",
+            "path": "/src/models/collaborative.py"
+          },
+          {
+            "id": "file-2",
+            "name": "content_based.py",
+            "type": "file",
+            "path": "/src/models/content_based.py"
+          },
+          {
+            "id": "file-3",
+            "name": "hybrid.py",
+            "type": "file",
+            "path": "/src/models/hybrid.py"
+          }
+        ]
+      },
+      {
+        "id": "dir-3",
+        "name": "data",
+        "type": "directory",
+        "path": "/src/data",
+        "children": [
+          {
+            "id": "file-4",
+            "name": "dataset.py",
+            "type": "file",
+            "path": "/src/data/dataset.py"
+          },
+          {
+            "id": "file-5",
+            "name": "preprocessor.py",
+            "type": "file",
+            "path": "/src/data/preprocessor.py"
+          }
+        ]
+      },
+      {
+        "id": "dir-4",
+        "name": "utils",
+        "type": "directory",
+        "path": "/src/utils",
+        "children": [
+          {
+            "id": "file-6",
+            "name": "metrics.py",
+            "type": "file",
+            "path": "/src/utils/metrics.py"
+          },
+          {
+            "id": "file-7",
+            "name": "visualization.py",
+            "type": "file",
+            "path": "/src/utils/visualization.py"
+          }
+        ]
+      },
+      {
+        "id": "dir-5",
+        "name": "api",
+        "type": "directory",
+        "path": "/src/api",
+        "children": [
+          {
+            "id": "file-8",
+            "name": "inference.py",
+            "type": "file",
+            "path": "/src/api/inference.py"
+          }
+        ]
+      },
+      {
+        "id": "file-9",
+        "name": "train.py",
+        "type": "file",
+        "path": "/src/train.py"
+      },
+      {
+        "id": "file-10",
+        "name": "evaluate.py",
+        "type": "file",
+        "path": "/src/evaluate.py"
+      }
+    ]
+  },
+  {
+    "id": "dir-6",
+    "name": "notebooks",
+    "type": "directory",
+    "path": "/notebooks",
+    "children": [
+      {
+        "id": "file-11",
+        "name": "data_exploration.ipynb",
+        "type": "file",
+        "path": "/notebooks/data_exploration.ipynb"
+      },
+      {
+        "id": "file-12",
+        "name": "model_evaluation.ipynb",
+        "type": "file",
+        "path": "/notebooks/model_evaluation.ipynb"
+      }
+    ]
+  },
+  {
+    "id": "dir-7",
+    "name": "tests",
+    "type": "directory",
+    "path": "/tests",
+    "children": [
+      {
+        "id": "file-13",
+        "name": "test_collaborative.py",
+        "type": "file",
+        "path": "/tests/test_collaborative.py"
+      },
+      {
+        "id": "file-14",
+        "name": "test_content_based.py",
+        "type": "file",
+        "path": "/tests/test_content_based.py"
+      }
+    ]
+  },
+  {
+    "id": "file-15",
+    "name": "requirements.txt",
+    "type": "file",
+    "path": "/requirements.txt"
+  },
+  {
+    "id": "file-16",
+    "name": "README.md",
+    "type": "file",
+    "path": "/README.md"
+  },
+  {
+    "id": "file-17",
+    "name": "Dockerfile",
+    "type": "file",
+    "path": "/Dockerfile"
+  }
+] 

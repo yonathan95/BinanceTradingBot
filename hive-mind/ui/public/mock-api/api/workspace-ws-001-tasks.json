@@ -1,0 +1,7 @@
+[
+  { "id": "task-1", "title": "Implement authentication flow", "status": "todo", "priority": "high", "workspaceId": "ws-001" },
+  { "id": "task-2", "title": "Fix responsive layout issues", "status": "in-progress", "assignedAgent": "agent-1", "priority": "medium", "workspaceId": "ws-001" },
+  { "id": "task-3", "title": "Add unit tests for API", "status": "todo", "priority": "medium", "workspaceId": "ws-001" },
+  { "id": "task-4", "title": "Update documentation", "status": "review", "assignedAgent": "agent-3", "priority": "low", "workspaceId": "ws-001" },
+  { "id": "task-5", "title": "Optimize database queries", "status": "done", "assignedAgent": "agent-2", "priority": "high", "workspaceId": "ws-001" }
+] 

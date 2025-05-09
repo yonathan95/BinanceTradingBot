@@ -1,0 +1,149 @@
+[
+  {
+    "team_id": "team-1",
+    "team_name": "Web App Development",
+    "date": "2023-05-02",
+    "token_count": 25000,
+    "cost": 5.35
+  },
+  {
+    "team_id": "team-1",
+    "team_name": "Web App Development",
+    "date": "2023-05-01",
+    "token_count": 32000,
+    "cost": 6.85
+  },
+  {
+    "team_id": "team-1",
+    "team_name": "Web App Development",
+    "date": "2023-04-30",
+    "token_count": 18500,
+    "cost": 3.95
+  },
+  {
+    "team_id": "team-1",
+    "team_name": "Web App Development",
+    "date": "2023-04-29",
+    "token_count": 30000,
+    "cost": 6.40
+  },
+  {
+    "team_id": "team-1",
+    "team_name": "Web App Development",
+    "date": "2023-04-28",
+    "token_count": 42000,
+    "cost": 9.00
+  },
+  {
+    "team_id": "team-1",
+    "team_name": "Web App Development",
+    "date": "2023-04-27",
+    "token_count": 38000,
+    "cost": 8.15
+  },
+  {
+    "team_id": "team-1",
+    "team_name": "Web App Development",
+    "date": "2023-04-26",
+    "token_count": 15000,
+    "cost": 3.20
+  },
+  {
+    "team_id": "team-2",
+    "team_name": "API Backend Team",
+    "date": "2023-05-02",
+    "token_count": 45000,
+    "cost": 13.50
+  },
+  {
+    "team_id": "team-2",
+    "team_name": "API Backend Team",
+    "date": "2023-05-01",
+    "token_count": 52000,
+    "cost": 15.60
+  },
+  {
+    "team_id": "team-2",
+    "team_name": "API Backend Team",
+    "date": "2023-04-30",
+    "token_count": 38000,
+    "cost": 11.40
+  },
+  {
+    "team_id": "team-2",
+    "team_name": "API Backend Team",
+    "date": "2023-04-29",
+    "token_count": 40000,
+    "cost": 12.00
+  },
+  {
+    "team_id": "team-2",
+    "team_name": "API Backend Team",
+    "date": "2023-04-28",
+    "token_count": 62000,
+    "cost": 18.60
+  },
+  {
+    "team_id": "team-2",
+    "team_name": "API Backend Team",
+    "date": "2023-04-27",
+    "token_count": 58000,
+    "cost": 17.40
+  },
+  {
+    "team_id": "team-2",
+    "team_name": "API Backend Team",
+    "date": "2023-04-26",
+    "token_count": 35000,
+    "cost": 10.50
+  },
+  {
+    "team_id": "team-3",
+    "team_name": "ML Model Training",
+    "date": "2023-05-02",
+    "token_count": 75000,
+    "cost": 22.50
+  },
+  {
+    "team_id": "team-3",
+    "team_name": "ML Model Training",
+    "date": "2023-05-01",
+    "token_count": 82000,
+    "cost": 24.60
+  },
+  {
+    "team_id": "team-3",
+    "team_name": "ML Model Training",
+    "date": "2023-04-30",
+    "token_count": 68000,
+    "cost": 20.40
+  },
+  {
+    "team_id": "team-3",
+    "team_name": "ML Model Training",
+    "date": "2023-04-29",
+    "token_count": 70000,
+    "cost": 21.00
+  },
+  {
+    "team_id": "team-3",
+    "team_name": "ML Model Training",
+    "date": "2023-04-28",
+    "token_count": 92000,
+    "cost": 27.60
+  },
+  {
+    "team_id": "team-3",
+    "team_name": "ML Model Training",
+    "date": "2023-04-27",
+    "token_count": 88000,
+    "cost": 26.40
+  },
+  {
+    "team_id": "team-3",
+    "team_name": "ML Model Training",
+    "date": "2023-04-26",
+    "token_count": 65000,
+    "cost": 19.50
+  }
+] 

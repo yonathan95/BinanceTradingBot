@@ -1,0 +1,34 @@
+[
+  {
+    "id": "agent-001",
+    "name": "Code Assistant",
+    "type": "agent",
+    "role": "coder",
+    "skills": ["javascript", "react", "typescript"],
+    "status": "active"
+  },
+  {
+    "id": "agent-002",
+    "name": "Test Runner",
+    "type": "agent", 
+    "role": "tester",
+    "skills": ["jest", "testing", "qa"],
+    "status": "active"
+  },
+  {
+    "id": "agent-003",
+    "name": "Documentation Helper",
+    "type": "agent",
+    "role": "documentation",
+    "skills": ["markdown", "documentation", "technical-writing"],
+    "status": "active"
+  },
+  {
+    "id": "agent-004",
+    "name": "Project Manager",
+    "type": "agent",
+    "role": "manager",
+    "skills": ["planning", "coordination", "oversight"],
+    "status": "active"
+  }
+] 

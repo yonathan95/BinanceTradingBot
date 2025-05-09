@@ -1,0 +1,19 @@
+FROM python:3.9-slim
+
+WORKDIR /app
+
+# Install dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# If requirements.txt doesn't exist, uncomment and use these lines instead
+# RUN pip install --no-cache-dir fastapi uvicorn python-socketio aiohttp
+
+# Copy application code
+COPY . .
+
+# Expose the port for external access
+EXPOSE 5000
+
+# Command to run the application
+CMD ["python", "control-plane/main.py"] 

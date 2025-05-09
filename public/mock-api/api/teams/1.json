@@ -1,0 +1,88 @@
+{
+  "id": "1",
+  "name": "Core Development Team",
+  "description": "Primary development team responsible for implementing core features",
+  "model_tier": "premium",
+  "budget_limit": 500,
+  "budget_used": 275.42,
+  "created_at": "2023-10-01T10:00:00Z",
+  "updated_at": "2023-11-05T15:00:00Z",
+  "agents": [
+    {
+      "id": "1",
+      "name": "Coder Agent",
+      "role": "Code Writer",
+      "avatar": "/mock-api/images/agent-coder.png",
+      "description": "Specializes in writing clean, efficient code for various platforms",
+      "model": "Claude Opus",
+      "capabilities": [
+        "JavaScript", 
+        "TypeScript", 
+        "React", 
+        "Node.js", 
+        "API Integration", 
+        "Unit Testing"
+      ],
+      "active": true,
+      "performance": {
+        "tasksCompleted": 143,
+        "successRate": 0.92
+      }
+    },
+    {
+      "id": "2",
+      "name": "Manager Agent",
+      "role": "Team Coordinator",
+      "description": "Coordinates the team's activities and resource allocation",
+      "model": "Claude Sonnet",
+      "capabilities": [
+        "Task Distribution", 
+        "Team Coordination", 
+        "Resource Allocation", 
+        "Progress Tracking"
+      ],
+      "active": true,
+      "performance": {
+        "tasksCompleted": 87,
+        "successRate": 0.95
+      }
+    },
+    {
+      "id": "3",
+      "name": "Tester Agent",
+      "role": "Quality Assurance",
+      "description": "Validates code quality and functionality through testing",
+      "model": "Claude Haiku",
+      "capabilities": [
+        "Unit Testing", 
+        "Integration Testing", 
+        "Performance Testing", 
+        "Bug Reporting", 
+        "Regression Testing"
+      ],
+      "active": true,
+      "performance": {
+        "tasksCompleted": 231,
+        "successRate": 0.87
+      }
+    },
+    {
+      "id": "4",
+      "name": "Planner Agent",
+      "role": "Strategic Planning",
+      "description": "Creates implementation plans and breaks down complex tasks",
+      "model": "Claude Sonnet",
+      "capabilities": [
+        "Task Breakdown", 
+        "Dependency Management", 
+        "Timeline Planning", 
+        "Resource Estimation"
+      ],
+      "active": true,
+      "performance": {
+        "tasksCompleted": 24,
+        "successRate": 0.95
+      }
+    }
+  ]
+} 

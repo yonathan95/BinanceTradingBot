@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: grafana
+  namespace: hivemind
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: grafana
+  template:
+    metadata:
+      labels:
+        app: grafana
+    spec:
+      containers:
+      - name: grafana
+        image: grafana/grafana:9.5.1
+        ports:
+        - containerPort: 3000
+        env:
+        - name: GF_SECURITY_ADMIN_USER
+          value: "admin"
+        - name: GF_SECURITY_ADMIN_PASSWORD
+          value: "admin"
+        - name: GF_USERS_ALLOW_SIGN_UP
+          value: "false"
+        volumeMounts:
+        - name: grafana-storage
+          mountPath: /var/lib/grafana
+        - name: grafana-provisioning
+          mountPath: /etc/grafana/provisioning
+      volumes:
+      - name: grafana-storage
+        persistentVolumeClaim:
+          claimName: grafana-data
+      - name: grafana-provisioning
+        hostPath:
+          path: /hive-mind/docker/grafana/provisioning  # Will need to be adjusted
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: grafana-service
+  namespace: hivemind
+spec:
+  selector:
+    app: grafana
+  ports:
+  - port: 3000
+    targetPort: 3000
+  type: ClusterIP 

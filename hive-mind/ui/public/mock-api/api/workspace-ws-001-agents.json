@@ -1,0 +1,6 @@
+[
+  { "id": "agent-1", "name": "Coder Agent", "status": "idle", "type": "coder", "taskCount": 2, "workspaceId": "ws-001" },
+  { "id": "agent-2", "name": "Tester Agent", "status": "working", "type": "tester", "taskCount": 1, "workspaceId": "ws-001" },
+  { "id": "agent-3", "name": "Planner Agent", "status": "idle", "type": "planner", "taskCount": 0, "workspaceId": "ws-001" },
+  { "id": "agent-4", "name": "Manager Agent", "status": "error", "type": "manager", "taskCount": 3, "workspaceId": "ws-001" }
+] 

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "ws-001",
+    "name": "Main Workspace",
+    "description": "Primary development workspace",
+    "createdAt": "2025-01-15T10:00:00Z",
+    "updatedAt": "2025-05-01T14:30:00Z",
+    "projectCount": 4,
+    "teamId": "team-1"
+  },
+  {
+    "id": "ws-002",
+    "name": "QA Workspace",
+    "description": "Quality assurance testing environment",
+    "createdAt": "2025-02-10T09:15:00Z",
+    "updatedAt": "2025-04-28T11:45:00Z",
+    "projectCount": 3,
+    "teamId": "team-1"
+  },
+  {
+    "id": "ws-003",
+    "name": "Production Workspace",
+    "description": "Live production environment",
+    "createdAt": "2025-01-20T13:45:00Z",
+    "updatedAt": "2025-05-03T09:30:00Z",
+    "projectCount": 5,
+    "teamId": "team-2"
+  },
+  {
+    "id": "ws-004",
+    "name": "Research Workspace",
+    "description": "Experimental features and research",
+    "createdAt": "2025-03-05T15:20:00Z",
+    "updatedAt": "2025-05-02T16:10:00Z",
+    "projectCount": 2,
+    "teamId": "team-3"
+  }
+] 
